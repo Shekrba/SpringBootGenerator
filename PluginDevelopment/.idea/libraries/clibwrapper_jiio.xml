@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="clibwrapper_jiio">
+    <CLASSES>
+      <root url="jar://C:/Program Files/MagicDraw UML/lib/graphics/clibwrapper_jiio.jar!/" />
+      <root url="jar://C:/Program Files/MagicDraw UML/lib/graphics/freehep-base.jar!/" />
+      <root url="jar://C:/Program Files/MagicDraw UML/lib/graphics/freehep-graphics2d.jar!/" />
+      <root url="jar://C:/Program Files/MagicDraw UML/lib/graphics/freehep-graphicsio-emf.jar!/" />
+      <root url="jar://C:/Program Files/MagicDraw UML/lib/graphics/freehep-graphicsio-ps.jar!/" />
+      <root url="jar://C:/Program Files/MagicDraw UML/lib/graphics/freehep-graphicsio.jar!/" />
+      <root url="jar://C:/Program Files/MagicDraw UML/lib/graphics/jai_imageio.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

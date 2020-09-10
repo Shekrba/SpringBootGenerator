@@ -1,0 +1,1562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="EclipseModuleManager">
+    <libelement value="jar://$MODULE_DIR$/lib/freemarker.jar!/" />
+    <libelement value="file://L:/Program Files/MagicDraw/lib/md.jar" />
+    <libelement value="file://L:/Program Files/MagicDraw/lib/md_api.jar" />
+    <libelement value="file://L:/Program Files/MagicDraw/lib/md_common.jar" />
+    <libelement value="file://L:/Program Files/MagicDraw/lib/md_common_api.jar" />
+    <libelement value="file://L:/Program Files/MagicDraw/lib/bundles/javax.jmi_1.0.0.201811041524/javax_jmi-1_0-fr.jar" />
+    <libelement value="file://L:/Program Files/MagicDraw/lib/bundles/com.nomagic.magicdraw.uml2_2.5.1.201811041524.jar" />
+    <libelement value="jar://$MODULE_DIR$/lib/xstream-1.3.1.jar!/" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/activation.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/batik.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/cmof14.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.admin.lock_17.0.1.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.client.ac_17.0.1.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.client.licensing_17.0.1.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.client.mediastore_17.0.1.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.cts.admin_17.0.1.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.cts.cdo_17.0.1.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.cts.info_17.0.1.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.cts.security_17.0.1.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.metamodel.admin_17.0.1.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.metamodel.index_17.0.1.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.metamodel.project_17.0.1.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.persistence.local_17.0.1.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.persistence.server_17.0.1.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.persistence_17.0.1.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.server.ac.core_17.0.1.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.server.common_17.0.1.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.services_17.0.1.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci_17.0.1.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/commons-codec-1.3.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/commons-compress-1.3.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/commons-httpclient-3.1.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/commons-logging-1.0.4.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/concurrent.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/cvsclient.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/EccpressoAll.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/ehcache-core-2.2.0.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/flexlm.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/HTMLEditorLight.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/javassist.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/javax_jmi-1_0-fr.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jaxb-api.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jaxb-impl.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jaxb-libs.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jax-qname.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jbossall-client.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jboss-aop-client.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jboss-aspect-jdk50-client.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jboss-common-core.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jbosscx-client.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jboss-ejb3-common-client.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jboss-ejb3-core-client.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jboss-ejb3-ext-api.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jboss-ejb3-proxy-client.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jboss-ejb3-security-client.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jboss-integration.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jboss-javaee.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jboss-logging-spi.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jboss-mdr.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jboss-messaging-client.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jboss-remoting.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jboss-security-spi.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jboss-serialization.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jbosssx.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jbosssx-as-client.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jbosssx-client.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jhall.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jide-action.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jide-charts.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jide-common.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jide-components.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jide-dock.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jide-editor.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jide-gantt.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jide-grids.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jide-properties.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jide-shortcut.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jimi.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jmyspell-core-1.0.0-beta-2.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jna.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jnp-client.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jsr250-api-1.0.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/jsr305.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/junit.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/launcher.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/log4j-1.2.15.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/lpg.runtime.java_2.0.17.v201004271640.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/md.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/md_api.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/md_cdo_1.0.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/md_common.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/md_common_api.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/md_foundation_1.0.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/namespace.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.apache.commons.codec_1.3.0.v201101211617.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.apache.commons.collections_3.2.0.v201005080500.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.apache.commons.logging_1.1.1.v201101211721.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.core.contenttype_3.4.100.v20110423-0524.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.core.jobs_3.5.100.v20110404.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.core.runtime_3.7.0.v20110110.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.emf.cdo.common_4.0.1.custom.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.emf.cdo.net4j_4.0.0.custom.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.emf.cdo_4.0.1.custom.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.emf.common_2.7.0.v20110513-1719.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.emf.ecore.change_2.7.0.v20110408-2116.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.emf.ecore.xmi_2.7.0.v20110411-2239.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.emf.ecore_2.7.0.v20110513-1719.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.emf.transaction_1.4.0.v20100331-1738.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.equinox.common_3.6.0.v20110506.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.equinox.registry_3.5.100.v20110502.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.net4j.tcp_4.0.0.custom.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.net4j.util_3.1.1.custom.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.net4j_4.0.0.custom.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.ocl.doc_3.0.1.R30x_v201008311245.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.ocl.ecore.edit.source_3.0.0.R30x_v201008251030.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.ocl.ecore.edit_3.0.0.R30x_v201008251030.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.ocl.ecore.source_3.0.1.R30x_v201008251030.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.ocl.ecore_3.0.1.R30x_v201008251030.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.ocl.source_3.0.1.R30x_v201008251030.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.ocl_3.0.1.R30x_v201008251030.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.osgi_3.7.0.v20110513.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.uml2.common_1.5.0.v200905041045.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/patch.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/relaxngDatatype.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/slf4j-api-1.5.11.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/slf4j-jdk14-1.5.11.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/trove.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/truezip-driver-zip-7.4.3.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/truezip-kernel-7.4.3.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/tw_common.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/tw_common_api.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/tw_console.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/tw_console_api.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/uml2.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/xalan.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/xercesImpl.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/xml-apis.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/xsdlib.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/y.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/graphics/clibwrapper_jiio.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/graphics/freehep-base.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/graphics/freehep-graphics2d.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/graphics/freehep-graphicsio.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/graphics/freehep-graphicsio-emf.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/graphics/freehep-graphicsio-ps.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/graphics/jai_imageio.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/webservice/axis.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/webservice/axis-config.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/webservice/commons-discovery-0.2.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/webservice/jaxrpc.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/webservice/mdserviceclient.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/webservice/rsclient.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/webservice/saaj.jar" />
+    <libelement value="file://C:/Program Files/MagicDraw UML/lib/webservice/wsdl4j-1.5.1.jar" />
+    <src_description expected_position="0">
+      <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
+      <src_folder value="file://$MODULE_DIR$/src-test" expected_position="1" />
+    </src_description>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/bin" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src-test" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="module-library">
+      <library name="freemarker.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/freemarker.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="md.jar">
+        <CLASSES>
+          <root url="file://L:/Program Files/MagicDraw/lib/md.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="md_api.jar">
+        <CLASSES>
+          <root url="file://L:/Program Files/MagicDraw/lib/md_api.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="md_common.jar">
+        <CLASSES>
+          <root url="file://L:/Program Files/MagicDraw/lib/md_common.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="md_common_api.jar">
+        <CLASSES>
+          <root url="file://L:/Program Files/MagicDraw/lib/md_common_api.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="javax_jmi-1_0-fr.jar">
+        <CLASSES>
+          <root url="file://L:/Program Files/MagicDraw/lib/bundles/javax.jmi_1.0.0.201811041524/javax_jmi-1_0-fr.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="com.nomagic.magicdraw.uml2_2.5.1.201811041524.jar">
+        <CLASSES>
+          <root url="file://L:/Program Files/MagicDraw/lib/bundles/com.nomagic.magicdraw.uml2_2.5.1.201811041524.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="xstream-1.3.1.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/xstream-1.3.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="activation.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/activation.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="batik.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/batik.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="cmof14.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/cmof14.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="com.nomagic.ci.admin.lock_17.0.1.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.admin.lock_17.0.1.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="com.nomagic.ci.client.ac_17.0.1.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.client.ac_17.0.1.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="com.nomagic.ci.client.licensing_17.0.1.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.client.licensing_17.0.1.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="com.nomagic.ci.client.mediastore_17.0.1.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.client.mediastore_17.0.1.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="com.nomagic.ci.cts.admin_17.0.1.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.cts.admin_17.0.1.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="com.nomagic.ci.cts.cdo_17.0.1.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.cts.cdo_17.0.1.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="com.nomagic.ci.cts.info_17.0.1.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.cts.info_17.0.1.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="com.nomagic.ci.cts.security_17.0.1.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.cts.security_17.0.1.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="com.nomagic.ci.metamodel.admin_17.0.1.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.metamodel.admin_17.0.1.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="com.nomagic.ci.metamodel.index_17.0.1.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.metamodel.index_17.0.1.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="com.nomagic.ci.metamodel.project_17.0.1.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.metamodel.project_17.0.1.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="com.nomagic.ci.persistence.local_17.0.1.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.persistence.local_17.0.1.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="com.nomagic.ci.persistence.server_17.0.1.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.persistence.server_17.0.1.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="com.nomagic.ci.persistence_17.0.1.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.persistence_17.0.1.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="com.nomagic.ci.server.ac.core_17.0.1.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.server.ac.core_17.0.1.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="com.nomagic.ci.server.common_17.0.1.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.server.common_17.0.1.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="com.nomagic.ci.services_17.0.1.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci.services_17.0.1.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="com.nomagic.ci_17.0.1.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/com.nomagic.ci_17.0.1.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-codec-1.3.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/commons-codec-1.3.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-compress-1.3.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/commons-compress-1.3.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-httpclient-3.1.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/commons-httpclient-3.1.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-logging-1.0.4.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/commons-logging-1.0.4.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="concurrent.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/concurrent.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="cvsclient.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/cvsclient.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="EccpressoAll.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/EccpressoAll.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="ehcache-core-2.2.0.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/ehcache-core-2.2.0.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="flexlm.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/flexlm.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="HTMLEditorLight.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/HTMLEditorLight.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="javassist.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/javassist.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="C:/Program Files/MagicDraw UML/lib/javax_jmi-1_0-fr.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/javax_jmi-1_0-fr.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jaxb-api.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jaxb-api.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jaxb-impl.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jaxb-impl.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jaxb-libs.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jaxb-libs.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jax-qname.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jax-qname.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jbossall-client.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jbossall-client.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jboss-aop-client.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jboss-aop-client.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jboss-aspect-jdk50-client.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jboss-aspect-jdk50-client.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jboss-common-core.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jboss-common-core.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jbosscx-client.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jbosscx-client.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jboss-ejb3-common-client.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jboss-ejb3-common-client.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jboss-ejb3-core-client.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jboss-ejb3-core-client.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jboss-ejb3-ext-api.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jboss-ejb3-ext-api.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jboss-ejb3-proxy-client.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jboss-ejb3-proxy-client.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jboss-ejb3-security-client.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jboss-ejb3-security-client.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jboss-integration.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jboss-integration.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jboss-javaee.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jboss-javaee.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jboss-logging-spi.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jboss-logging-spi.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jboss-mdr.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jboss-mdr.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jboss-messaging-client.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jboss-messaging-client.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jboss-remoting.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jboss-remoting.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jboss-security-spi.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jboss-security-spi.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jboss-serialization.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jboss-serialization.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jbosssx.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jbosssx.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jbosssx-as-client.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jbosssx-as-client.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jbosssx-client.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jbosssx-client.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jhall.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jhall.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jide-action.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jide-action.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jide-charts.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jide-charts.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jide-common.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jide-common.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jide-components.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jide-components.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jide-dock.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jide-dock.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jide-editor.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jide-editor.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jide-gantt.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jide-gantt.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jide-grids.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jide-grids.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jide-properties.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jide-properties.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jide-shortcut.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jide-shortcut.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jimi.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jimi.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jmyspell-core-1.0.0-beta-2.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jmyspell-core-1.0.0-beta-2.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jna.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jna.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jnp-client.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jnp-client.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jsr250-api-1.0.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jsr250-api-1.0.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jsr305.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/jsr305.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="junit.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/junit.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="launcher.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/launcher.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="log4j-1.2.15.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/log4j-1.2.15.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="lpg.runtime.java_2.0.17.v201004271640.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/lpg.runtime.java_2.0.17.v201004271640.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="C:/Program Files/MagicDraw UML/lib/md.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/md.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="C:/Program Files/MagicDraw UML/lib/md_api.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/md_api.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="md_cdo_1.0.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/md_cdo_1.0.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="C:/Program Files/MagicDraw UML/lib/md_common.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/md_common.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="C:/Program Files/MagicDraw UML/lib/md_common_api.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/md_common_api.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="md_foundation_1.0.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/md_foundation_1.0.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="namespace.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/namespace.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.apache.commons.codec_1.3.0.v201101211617.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.apache.commons.codec_1.3.0.v201101211617.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.apache.commons.collections_3.2.0.v201005080500.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.apache.commons.collections_3.2.0.v201005080500.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.apache.commons.logging_1.1.1.v201101211721.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.apache.commons.logging_1.1.1.v201101211721.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.core.contenttype_3.4.100.v20110423-0524.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.core.contenttype_3.4.100.v20110423-0524.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.core.jobs_3.5.100.v20110404.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.core.jobs_3.5.100.v20110404.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.core.runtime_3.7.0.v20110110.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.core.runtime_3.7.0.v20110110.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.emf.cdo.common_4.0.1.custom.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.emf.cdo.common_4.0.1.custom.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.emf.cdo.net4j_4.0.0.custom.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.emf.cdo.net4j_4.0.0.custom.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.emf.cdo_4.0.1.custom.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.emf.cdo_4.0.1.custom.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.emf.common_2.7.0.v20110513-1719.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.emf.common_2.7.0.v20110513-1719.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.emf.ecore.change_2.7.0.v20110408-2116.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.emf.ecore.change_2.7.0.v20110408-2116.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.emf.ecore.xmi_2.7.0.v20110411-2239.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.emf.ecore.xmi_2.7.0.v20110411-2239.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.emf.ecore_2.7.0.v20110513-1719.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.emf.ecore_2.7.0.v20110513-1719.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.emf.transaction_1.4.0.v20100331-1738.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.emf.transaction_1.4.0.v20100331-1738.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.equinox.common_3.6.0.v20110506.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.equinox.common_3.6.0.v20110506.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.equinox.registry_3.5.100.v20110502.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.equinox.registry_3.5.100.v20110502.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.net4j.tcp_4.0.0.custom.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.net4j.tcp_4.0.0.custom.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.net4j.util_3.1.1.custom.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.net4j.util_3.1.1.custom.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.net4j_4.0.0.custom.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.net4j_4.0.0.custom.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.ocl.doc_3.0.1.R30x_v201008311245.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.ocl.doc_3.0.1.R30x_v201008311245.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.ocl.ecore.edit.source_3.0.0.R30x_v201008251030.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.ocl.ecore.edit.source_3.0.0.R30x_v201008251030.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.ocl.ecore.edit_3.0.0.R30x_v201008251030.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.ocl.ecore.edit_3.0.0.R30x_v201008251030.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.ocl.ecore.source_3.0.1.R30x_v201008251030.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.ocl.ecore.source_3.0.1.R30x_v201008251030.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.ocl.ecore_3.0.1.R30x_v201008251030.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.ocl.ecore_3.0.1.R30x_v201008251030.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.ocl.source_3.0.1.R30x_v201008251030.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.ocl.source_3.0.1.R30x_v201008251030.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.ocl_3.0.1.R30x_v201008251030.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.ocl_3.0.1.R30x_v201008251030.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.osgi_3.7.0.v20110513.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.osgi_3.7.0.v20110513.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.uml2.common_1.5.0.v200905041045.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/org.eclipse.uml2.common_1.5.0.v200905041045.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="patch.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/patch.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="relaxngDatatype.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/relaxngDatatype.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="slf4j-api-1.5.11.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/slf4j-api-1.5.11.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="slf4j-jdk14-1.5.11.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/slf4j-jdk14-1.5.11.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="trove.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/trove.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="truezip-driver-zip-7.4.3.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/truezip-driver-zip-7.4.3.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="truezip-kernel-7.4.3.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/truezip-kernel-7.4.3.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="tw_common.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/tw_common.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="tw_common_api.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/tw_common_api.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="tw_console.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/tw_console.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="tw_console_api.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/tw_console_api.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="uml2.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/uml2.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="xalan.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/xalan.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="xercesImpl.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/xercesImpl.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="xml-apis.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/xml-apis.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="xsdlib.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/xsdlib.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="y.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/y.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="clibwrapper_jiio.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/graphics/clibwrapper_jiio.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="freehep-base.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/graphics/freehep-base.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="freehep-graphics2d.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/graphics/freehep-graphics2d.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="freehep-graphicsio.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/graphics/freehep-graphicsio.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="freehep-graphicsio-emf.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/graphics/freehep-graphicsio-emf.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="freehep-graphicsio-ps.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/graphics/freehep-graphicsio-ps.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jai_imageio.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/graphics/jai_imageio.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="axis.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/webservice/axis.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="axis-config.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/webservice/axis-config.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-discovery-0.2.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/webservice/commons-discovery-0.2.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jaxrpc.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/webservice/jaxrpc.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="mdserviceclient.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/webservice/mdserviceclient.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="rsclient.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/webservice/rsclient.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="saaj.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/webservice/saaj.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="wsdl4j-1.5.1.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/MagicDraw UML/lib/webservice/wsdl4j-1.5.1.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="activation" level="project" />
+    <orderEntry type="library" name="clibwrapper_jiio" level="project" />
+    <orderEntry type="library" name="axis" level="project" />
+  </component>
+</module>
