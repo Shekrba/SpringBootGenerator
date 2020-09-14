@@ -22,9 +22,9 @@ import myplugin.generator.options.GeneratorOptions;
  *        complete ejb classes
  */
 
-public class EJBGenerator extends BasicGenerator {
+public class SpringGenerator extends BasicGenerator {
 
-	public EJBGenerator(GeneratorOptions generatorOptions) {
+	public SpringGenerator(GeneratorOptions generatorOptions) {
 		super(generatorOptions);
 	}
 
@@ -42,7 +42,7 @@ public class EJBGenerator extends BasicGenerator {
 			Writer out;
 			Map<String, Object> context = new HashMap<String, Object>();
 			try {
-				out = getWriter(cl.getName(), cl.getTypePackage());
+				out = getWriter(cl.getClassName(), cl.getClassPackage());
 				if (out != null) {
 					context.clear();
 					context.put("class", cl);

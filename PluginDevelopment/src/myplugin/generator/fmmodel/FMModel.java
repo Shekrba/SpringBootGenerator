@@ -11,7 +11,6 @@ import java.util.List;
 public class FMModel {
 	
 	private List<FMClass> classes = new ArrayList<FMClass>();
-	private List<FMEnumeration> enumerations = new ArrayList<FMEnumeration>();
 	
 	//....
 	/** @ToDo: Add lists of other elements, if needed */
@@ -34,13 +33,6 @@ public class FMModel {
 	public void setClasses(List<FMClass> classes) {
 		this.classes = classes;
 	}
-	public List<FMEnumeration> getEnumerations() {
-		return enumerations;
-	}
-	public void setEnumerations(List<FMEnumeration> enumerations) {
-		this.enumerations = enumerations;
-	}
-
 
 
 }

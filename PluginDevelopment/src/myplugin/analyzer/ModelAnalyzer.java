@@ -3,10 +3,15 @@ package myplugin.analyzer;
 import java.util.Iterator;
 import java.util.List;
 
+import myplugin.generator.fmmodel.ColumnProp;
 import myplugin.generator.fmmodel.FMClass;
 import myplugin.generator.fmmodel.FMEnumeration;
 import myplugin.generator.fmmodel.FMModel;
 import myplugin.generator.fmmodel.FMProperty;
+import myplugin.generator.fmmodel.IdProp;
+import myplugin.generator.fmmodel.ManyToMany;
+import myplugin.generator.fmmodel.ManyToOne;
+import myplugin.generator.fmmodel.OneToMany;
 
 import com.nomagic.uml2.ext.jmi.helpers.ModelHelper;
 import com.nomagic.uml2.ext.jmi.helpers.StereotypesHelper;
@@ -48,7 +53,7 @@ public class ModelAnalyzer {
 	
 	public void prepareModel() throws AnalyzeException {
 		FMModel.getInstance().getClasses().clear();
-		FMModel.getInstance().getEnumerations().clear();
+		//FMModel.getInstance().getEnumerations().clear();
 		processPackage(root, filePackage);
 	}
 	
@@ -74,20 +79,22 @@ public class ModelAnalyzer {
 					FMModel.getInstance().getClasses().add(fmClass);
 				}
 				
-				if (ownedElement instanceof Enumeration) {
+				/*if (ownedElement instanceof Enumeration) {
 					Enumeration en = (Enumeration)ownedElement;
 					FMEnumeration fmEnumeration = getEnumerationData(en, packageName);
 					FMModel.getInstance().getEnumerations().add(fmEnumeration);
-				}								
+				}		*/						
 			}
 			
 			for (Iterator<Element> it = pack.getOwnedElement().iterator(); it.hasNext();) {
 				Element ownedElement = it.next();
 				if (ownedElement instanceof Package) {					
 					Package ownedPackage = (Package)ownedElement;
-					if (StereotypesHelper.getAppliedStereotypeByString(ownedPackage, "BusinessApp") != null)
-						//only packages with stereotype BusinessApp are candidates for metadata extraction and code generation:
+					
+					if(StereotypesHelper.getAppliedStereotypeByString(ownedPackage, "ProcessPackage")!=null) {
 						processPackage(ownedPackage, packageName);
+					}
+
 				}
 			}
 			
@@ -100,16 +107,25 @@ public class ModelAnalyzer {
 		if (cl.getName() == null) 
 			throw new AnalyzeException("Classes must have names!");
 		
-		FMClass fmClass = new FMClass(cl.getName(), packageName, cl.getVisibility().toString());
+		Stereotype tableSt = StereotypesHelper.getAppliedStereotypeByString(cl, "Table");
 		
-		//----------------
-		Stereotype st = StereotypesHelper.getAppliedStereotypeByString(cl, "Forma");
-		if (st != null) {
-			//only packages with stereotype BusinessApp are candidates for metadata extraction and code generation:
-			String label = StereotypesHelper.getStereotypePropertyValueAsString(cl, st, "label").get(0);
-			fmClass.setLabel(label);
+		String tableName = "";
+		boolean isEntity = false;
+		
+		List valuesEntity = StereotypesHelper.getStereotypePropertyValue(cl,tableSt,"entity");
+		
+		if (valuesEntity!=null && !valuesEntity.isEmpty()){
+			isEntity = (boolean) valuesEntity.get(0);
 		}
-		//------------------
+		
+		if(isEntity) {
+			tableName = StereotypesHelper.getStereotypePropertyValue(cl,tableSt,"name").get(0).toString();
+		}else {
+			tableName = null;
+		}
+		
+			
+		FMClass fmClass = new FMClass(tableName,cl.getName(), isEntity, packageName);
 		
 		Iterator<Property> it = ModelHelper.attributes(cl);
 		while (it.hasNext()) {
@@ -136,14 +152,180 @@ public class ModelAnalyzer {
 		String typeName = attType.getName();
 		if (typeName == null)
 			throw new AnalyzeException("Type ot the property " + cl.getName() + "." +
-			p.getName() + " must have name!");		
-			
-		int lower = p.getLower();
-		int upper = p.getUpper();
-		
-		FMProperty prop = new FMProperty(attName, typeName, p.getVisibility().toString(), 
-				lower, upper);
-		return prop;		
+			p.getName() + " must have name!");
+					
+	    Stereotype stereotype = StereotypesHelper.getAppliedStereotypeByString(p, "IdProp");
+	    if(stereotype != null) {
+	    	List columnNameList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"name");
+		    String columnName = "";
+		    if (columnNameList!=null && !columnNameList.isEmpty()){
+				columnName = columnNameList.get(0).toString();
+			}else {
+				columnName = null;
+			}
+	    
+		    List strategyList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"strategy");
+		    String strategy = "";
+		    if (strategyList!=null && !strategyList.isEmpty()){
+		    	strategy = strategyList.get(0).toString();
+			}else {
+				strategy = null;
+			}
+		    
+			IdProp idProp = new IdProp(attType.getName(), p.getVisibility().toString(), p.getName(), columnName, strategy);
+			return idProp;
+	    }
+	    
+	    stereotype = StereotypesHelper.getAppliedStereotypeByString(p, "ColumnProp");
+	    if(stereotype != null) {
+	    	List columnNameList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"name");
+		    String columnName = "";
+		    if (columnNameList!=null && !columnNameList.isEmpty()){
+				columnName = columnNameList.get(0).toString();
+			}else {
+				columnName = null;
+			}
+	    
+		    List isNullableList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"isNullable");
+		    boolean isNullable = true;
+		    if (isNullableList!=null && !isNullableList.isEmpty()){
+		    	isNullable = (boolean)isNullableList.get(0);
+			}
+		    
+		    List isUniqueList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"isUnique");
+		    boolean isUnique = true;
+		    if (isUniqueList!=null && !isUniqueList.isEmpty()){
+		    	isUnique = (boolean)isUniqueList.get(0);
+			}
+		    
+		    ColumnProp columnProp = new ColumnProp(attType.getName(), p.getVisibility().toString(), p.getName(), columnName, isNullable, isUnique);
+		    return columnProp;
+	    }
+	    
+	    stereotype = StereotypesHelper.getAppliedStereotypeByString(p, "OneToMany");
+	    if(stereotype != null) {
+	    	List columnNameList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"name");
+		    String columnName = "";
+		    if (columnNameList!=null && !columnNameList.isEmpty()){
+				columnName = columnNameList.get(0).toString();
+			}else {
+				columnName = null;
+			}
+		    
+	        List fetchTypeList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"fetchType");
+		    String fetchType = "";
+		    if (fetchTypeList!=null && !fetchTypeList.isEmpty()){
+		    	fetchType = fetchTypeList.get(0).toString();
+			}else {
+				fetchType = null;
+			}
+		    
+	    	List cascadeTypeList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"cascadeType");
+		    String cascadeType = "";
+		    if (cascadeTypeList!=null && !cascadeTypeList.isEmpty()){
+		    	cascadeType = cascadeTypeList.get(0).toString();
+			}else {
+				cascadeType = null;
+			}
+		    
+	    	List mappedByList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"mappedBy");
+		    String mappedBy = "";
+		    if (mappedByList!=null && !mappedByList.isEmpty()){
+		    	mappedBy = mappedByList.get(0).toString();
+			}else {
+				mappedBy = null;
+			}
+		    
+		    OneToMany oneToMany = new OneToMany(attType.getName(), p.getVisibility().toString(), p.getName(), columnName, fetchType, cascadeType, mappedBy);
+		    return oneToMany;
+	    }
+	    
+	    stereotype = StereotypesHelper.getAppliedStereotypeByString(p, "ManyToOne");
+	    if(stereotype != null) {
+	    	List columnNameList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"name");
+		    String columnName = "";
+		    if (columnNameList!=null && !columnNameList.isEmpty()){
+				columnName = columnNameList.get(0).toString();
+			}else {
+				columnName = null;
+			}
+		    
+	        List fetchTypeList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"fetchType");
+		    String fetchType = "";
+		    if (fetchTypeList!=null && !fetchTypeList.isEmpty()){
+		    	fetchType = fetchTypeList.get(0).toString();
+			}else {
+				fetchType = null;
+			}
+		    
+	    	List cascadeTypeList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"cascadeType");
+		    String cascadeType = "";
+		    if (cascadeTypeList!=null && !cascadeTypeList.isEmpty()){
+		    	cascadeType = cascadeTypeList.get(0).toString();
+			}else {
+				cascadeType = null;
+			}
+		    
+	    	List mappedByList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"mappedBy");
+		    String mappedBy = "";
+		    if (mappedByList!=null && !mappedByList.isEmpty()){
+		    	mappedBy = mappedByList.get(0).toString();
+			}else {
+				mappedBy = null;
+			}
+		    
+		    ManyToOne manyToOne = new ManyToOne(attType.getName(), p.getVisibility().toString(), p.getName(), columnName, fetchType, cascadeType, mappedBy);
+		    return manyToOne;
+	    }
+	    
+	    stereotype = StereotypesHelper.getAppliedStereotypeByString(p, "ManyToMany");
+	    if(stereotype != null) {
+	    	List columnNameList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"name");
+		    String columnName = "";
+		    if (columnNameList!=null && !columnNameList.isEmpty()){
+				columnName = columnNameList.get(0).toString();
+			}else {
+				columnName = null;
+			}
+		    
+	        List fetchTypeList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"fetchType");
+		    String fetchType = "";
+		    if (fetchTypeList!=null && !fetchTypeList.isEmpty()){
+		    	fetchType = fetchTypeList.get(0).toString();
+			}else {
+				fetchType = null;
+			}
+		    
+	    	List cascadeTypeList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"cascadeType");
+		    String cascadeType = "";
+		    if (cascadeTypeList!=null && !cascadeTypeList.isEmpty()){
+		    	cascadeType = cascadeTypeList.get(0).toString();
+			}else {
+				cascadeType = null;
+			}
+		    
+	    	List joinColumnsList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"joinColumns");
+		    String joinColumns = "";
+		    if (joinColumnsList!=null && !joinColumnsList.isEmpty()){
+		    	joinColumns = joinColumnsList.get(0).toString();
+			}else {
+				joinColumns = null;
+			}
+		    
+	    	List inverseJoinColumnsList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"inverseJoinColumns");
+		    String inversejoinColumns = "";
+		    if (inverseJoinColumnsList!=null && !inverseJoinColumnsList.isEmpty()){
+		    	inversejoinColumns = inverseJoinColumnsList.get(0).toString();
+			}else {
+				inversejoinColumns = null;
+			}
+		    
+		    ManyToMany manyToMany = new ManyToMany(attType.getName(), p.getVisibility().toString(), p.getName(), columnName, fetchType, cascadeType, joinColumns, inversejoinColumns);
+		    return manyToMany;
+	    } 
+	    
+	    return new FMProperty(typeName, p.getVisibility().toString(), attName, null);	
+	    
 	}	
 	
 	private FMEnumeration getEnumerationData(Enumeration enumeration, String packageName) throws AnalyzeException {

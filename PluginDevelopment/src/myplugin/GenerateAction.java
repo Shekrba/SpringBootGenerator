@@ -18,7 +18,7 @@ import com.thoughtworks.xstream.io.xml.DomDriver;
 
 import myplugin.analyzer.AnalyzeException;
 import myplugin.analyzer.ModelAnalyzer;
-import myplugin.generator.EJBGenerator;
+import myplugin.generator.SpringGenerator;
 import myplugin.generator.fmmodel.FMModel;
 import myplugin.generator.options.GeneratorOptions;
 import myplugin.generator.options.ProjectOptions;
@@ -44,7 +44,7 @@ class GenerateAction extends MDAction{
 		try {
 			analyzer.prepareModel();	
 			GeneratorOptions go = ProjectOptions.getProjectOptions().getGeneratorOptions().get("EJBGenerator");			
-			EJBGenerator generator = new EJBGenerator(go);
+			SpringGenerator generator = new SpringGenerator(go);
 			generator.generate();
 			/**  @ToDo: Also call other generators */ 
 			JOptionPane.showMessageDialog(null, "Code is successfully generated! Generated code is in folder: " + go.getOutputPath() +
@@ -69,7 +69,7 @@ class GenerateAction extends MDAction{
 					out = new BufferedWriter(new OutputStreamWriter(
 							new FileOutputStream(fileName), "UTF8"));					
 					xstream.toXML(FMModel.getInstance().getClasses(), out);
-					xstream.toXML(FMModel.getInstance().getEnumerations(), out);
+					//xstream.toXML(FMModel.getInstance().getEnumerations(), out);
 					
 				} catch (UnsupportedEncodingException e) {
 					JOptionPane.showMessageDialog(null, e.getMessage());				

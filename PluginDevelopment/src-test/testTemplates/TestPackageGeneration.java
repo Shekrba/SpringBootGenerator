@@ -2,7 +2,7 @@ package testTemplates;
 
 import java.util.List;
 
-import myplugin.generator.EJBGenerator;
+import myplugin.generator.SpringGenerator;
 import myplugin.generator.fmmodel.FMClass;
 import myplugin.generator.fmmodel.FMModel;
 import myplugin.generator.fmmodel.FMProperty;
@@ -24,7 +24,7 @@ public class TestPackageGeneration {
 	
 	private void initModel() {		
 		
-		List<FMClass> classes = FMModel.getInstance().getClasses();
+		/*List<FMClass> classes = FMModel.getInstance().getClasses();
 		
 		classes.clear();
 		
@@ -60,13 +60,13 @@ public class TestPackageGeneration {
 		cl.addProperty(new FMProperty("sifraKartice", "String", "private", 1, 1));
 		cl.addProperty(new FMProperty("nazivKartice", "String", "private", 1, 1));
 		
-		classes.add(cl);		
+		classes.add(cl);		*/
 	}
 	
 	public void testGenerator() {
 		initModel();		
 		GeneratorOptions go = ProjectOptions.getProjectOptions().getGeneratorOptions().get("EJBGenerator");	
-		EJBGenerator g = new EJBGenerator(go);
+		SpringGenerator g = new SpringGenerator(go);
 		g.generate();
 	}
 	

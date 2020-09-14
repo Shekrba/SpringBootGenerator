@@ -1,56 +1,63 @@
 package myplugin.generator.fmmodel;
 
 
-public class FMProperty extends FMElement  {
+public class FMProperty {
 	//Property type
-	private String type;
+	protected String type;
 	// Property visibility (public, private, protected, package)
-	private String visibility;
-	//Multiplicity (lower value)
-	private Integer lower;
-	//Multiplicity (upper value) 
-	private Integer upper;
+	protected String visibility;
+	
+	protected String propertyName;
+	
+	protected String columnName;
+		
+	public FMProperty(String type, String visibility, String propertyName, String columnName) {
+		super();
+		this.type = type;
+		this.visibility = visibility;
+		this.propertyName = propertyName;
+		this.columnName = columnName;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getVisibility() {
+		return visibility;
+	}
+
+	public void setVisibility(String visibility) {
+		this.visibility = visibility;
+	}
+
+	public String getPropertyName() {
+		return propertyName;
+	}
+
+	public void setPropertyName(String propertyName) {
+		this.propertyName = propertyName;
+	}
+
+	public String getColumnName() {
+		return columnName;
+	}
+
+	public void setColumnName(String columnName) {
+		this.columnName = columnName;
+	}
+
 	
 	/** @ToDo: Add length, precision, unique... whatever is needed for ejb class generation
 	 * Also, provide these meta-attributes or tags in the modeling languange metaclass or 
 	 * stereotype */
 
 	
-	public FMProperty(String name, String type, String visibility, int lower, int upper) {
-		super(name);
-		this.type = type;
-		this.visibility = visibility;
-		
-		this.lower = lower;
-		this.upper = upper;		
-	}
 	
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
-	public String getVisibility() {
-		return visibility;
-	}
-	public void setVisibility(String visibility) {
-		this.visibility = visibility;
-	}
 	
-	public Integer getLower() {
-		return lower;
-	}
-
-	public void setLower(Integer lower) {
-		this.lower = lower;
-	}
-
-	public Integer getUpper() {
-		return upper;
-	}
-
-	public void setUpper(Integer upper) {
-		this.upper = upper;
-	}
+	
 }

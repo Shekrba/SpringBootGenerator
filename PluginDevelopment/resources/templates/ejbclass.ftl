@@ -1,7 +1,5 @@
 package ${class.typePackage};
 
-//labela je ${class.label}
-
 ${class.visibility} class ${class.name} {  
 <#list properties as property>
 	<#if property.upper == 1 >   

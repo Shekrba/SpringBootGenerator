@@ -5,10 +5,15 @@ import java.util.Iterator;
 import java.util.List;
 
 
-public class FMClass extends FMType {	
+public class FMClass {	
 	
-	private String visibility;
+	private String tableName;
 	
+	private String className;
+	
+	private boolean entity;
+	
+	private String classPackage;
 
 	//Class properties
 	private List<FMProperty> FMProperties = new ArrayList<FMProperty>();
@@ -16,14 +21,14 @@ public class FMClass extends FMType {
 	//list of packages (for import declarations) 
 	private List<String> importedPackages = new ArrayList<String>();
 	
-	private String label = "";
-	
 	/** @ToDo: add list of methods */
 	
 	
-	public FMClass(String name, String classPackage, String visibility) {
-		super(name, classPackage);		
-		this.visibility = visibility;
+	public FMClass(String tableName, String className, boolean entity, String classPackage) {
+		this.tableName = tableName;
+		this.className = className;
+		this.entity = entity;
+		this.classPackage = classPackage;
 	}	
 	
 	public List<FMProperty> getProperties(){
@@ -57,22 +62,40 @@ public class FMClass extends FMType {
 	public int getImportedCount(){
 		return FMProperties.size();
 	}
+
+	public String getTableName() {
+		return tableName;
+	}
+
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+	}
+
+	public String getClassName() {
+		return className;
+	}
+
+	public void setClassName(String className) {
+		this.className = className;
+	}
+
+	public boolean isEntity() {
+		return entity;
+	}
+
+	public void setEntity(boolean entity) {
+		this.entity = entity;
+	}
+
+	public String getClassPackage() {
+		return classPackage;
+	}
+
+	public void setClassPackage(String classPackage) {
+		this.classPackage = classPackage;
+	}
 	
-	public String getVisibility() {
-		return visibility;
-	}
-
-	public void setVisibility(String visibility) {
-		this.visibility = visibility;
-	}
-
-	public String getLabel() {
-		return label;
-	}
-
-	public void setLabel(String label) {
-		this.label = label;
-	}	
+	
 
 	
 	
