@@ -67,7 +67,7 @@ public class TestPackageGeneration {
 		initModel();		
 		GeneratorOptions go = ProjectOptions.getProjectOptions().getGeneratorOptions().get("EJBGenerator");	
 		SpringGenerator g = new SpringGenerator(go);
-		g.generate();
+		//g.generate();
 	}
 	
 	public static void main(String[] args) {

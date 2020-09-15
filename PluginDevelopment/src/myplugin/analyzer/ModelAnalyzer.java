@@ -81,7 +81,7 @@ public class ModelAnalyzer {
 					FMClass fmClass = getClassData(cl, packageName);
 					if(fmClass!=null) {
 						FMModel.getInstance().getClasses().add(fmClass);
-						if(fmClass.isGenerateCreate() || fmClass.isGenerateRead() || fmClass.isGenerateUpdate() || fmClass.isGenerateDelete()) {
+						if(fmClass.isGenerateCreate()==true || fmClass.isGenerateRead()==true || fmClass.isGenerateUpdate()==true || fmClass.isGenerateDelete()==true) {
 							FMModel.getInstance().getCrudClasses().add(fmClass);
 							//JOptionPane.showMessageDialog(null, fmClass.getClassName());
 						}

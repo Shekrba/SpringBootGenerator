@@ -48,6 +48,7 @@ class GenerateAction extends MDAction{
 			generator.generate("table");
 			/**  @ToDo: Also call other generators */ 
 
+			analyzer.prepareModel();
 			GeneratorOptions goCrud = ProjectOptions.getProjectOptions().getGeneratorOptions().get("CrudGenerator");			
 			SpringGenerator generatorCrud = new SpringGenerator(goCrud);
 			generatorCrud.generate("crud");

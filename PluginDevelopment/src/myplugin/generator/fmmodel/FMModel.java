@@ -38,10 +38,10 @@ public class FMModel {
 	}
 
 	public List<FMClass> getCrudClasses() {
-		return classes;
+		return crudClasses;
 	}
 	public void setCrudClasses(List<FMClass> crudClasses) {
-		this.classes = crudClasses;
+		this.crudClasses = crudClasses;
 	}
 
 }
