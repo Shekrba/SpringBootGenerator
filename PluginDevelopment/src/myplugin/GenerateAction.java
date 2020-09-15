@@ -39,7 +39,7 @@ class GenerateAction extends MDAction{
 		
 		if (root == null) return;
 	
-		ModelAnalyzer analyzer = new ModelAnalyzer(root, "ejb");	
+		ModelAnalyzer analyzer = new ModelAnalyzer(root, "spring");	
 		
 		try {
 			analyzer.prepareModel();	
