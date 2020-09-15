@@ -29,15 +29,20 @@ public class MyPlugin extends com.nomagic.magicdraw.plugins.Plugin {
 		 * ProjectOptions.xml and take ejb generator options */
 		
 		//for test purpose only:
-		GeneratorOptions ejbOptions = new GeneratorOptions("c:/temp", "model", "templates", "{0}.java", true, "spring");
-		ProjectOptions.getProjectOptions().getGeneratorOptions().put("EJBGenerator", ejbOptions);
+		GeneratorOptions tableOptions = new GeneratorOptions("c:/temp", "model", "templates", "{0}.java", true, "spring");
+		ProjectOptions.getProjectOptions().getGeneratorOptions().put("TableGenerator", tableOptions);
 				
-		ejbOptions.setTemplateDir(pluginDir + File.separator + ejbOptions.getTemplateDir()); //apsolutna putanja
+		tableOptions.setTemplateDir(pluginDir + File.separator + tableOptions.getTemplateDir()); //apsolutna putanja
 		
-		GeneratorOptions ejbOptionsCrud = new GeneratorOptions("c:/temp", "crud", "templates", "{0}crud.java", true, "spring"); 				
-		ProjectOptions.getProjectOptions().getGeneratorOptions().put("CrudGenerator", ejbOptionsCrud);
+		GeneratorOptions repoOptions = new GeneratorOptions("c:/temp", "repo", "templates", "{0}Repo.java", true, "spring"); 				
+		ProjectOptions.getProjectOptions().getGeneratorOptions().put("RepoGenerator", repoOptions);
 		
-		ejbOptionsCrud.setTemplateDir(pluginDir + File.separator + ejbOptionsCrud.getTemplateDir()); //apsolutna putanja
+		repoOptions.setTemplateDir(pluginDir + File.separator + repoOptions.getTemplateDir()); //apsolutna putanja
+		
+		GeneratorOptions apiOptions = new GeneratorOptions("c:/temp", "api", "templates", "{0}Api.java", true, "spring"); 				
+		ProjectOptions.getProjectOptions().getGeneratorOptions().put("ApiGenerator", apiOptions);
+		
+		apiOptions.setTemplateDir(pluginDir + File.separator + apiOptions.getTemplateDir()); //apsolutna putanja
 				
 	}
 

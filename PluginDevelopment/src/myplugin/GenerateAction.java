@@ -43,18 +43,23 @@ class GenerateAction extends MDAction{
 		
 		try {
 			analyzer.prepareModel();	
-			GeneratorOptions go = ProjectOptions.getProjectOptions().getGeneratorOptions().get("EJBGenerator");			
-			SpringGenerator generator = new SpringGenerator(go);
-			generator.generate("table");
+			GeneratorOptions goTable = ProjectOptions.getProjectOptions().getGeneratorOptions().get("TableGenerator");			
+			SpringGenerator generatorTable = new SpringGenerator(goTable);
+			generatorTable.generate("table");
 			/**  @ToDo: Also call other generators */ 
 
 			analyzer.prepareModel();
-			GeneratorOptions goCrud = ProjectOptions.getProjectOptions().getGeneratorOptions().get("CrudGenerator");			
-			SpringGenerator generatorCrud = new SpringGenerator(goCrud);
-			generatorCrud.generate("crud");
+			GeneratorOptions goRepo = ProjectOptions.getProjectOptions().getGeneratorOptions().get("RepoGenerator");			
+			SpringGenerator generatorRepo = new SpringGenerator(goRepo);
+			generatorRepo.generate("repo");
 			
-			JOptionPane.showMessageDialog(null, "Code is successfully generated! Generated code is in folder: " + go.getOutputPath() +
-					                         ", package: " + go.getFilePackage());
+			analyzer.prepareModel();
+			GeneratorOptions goApi = ProjectOptions.getProjectOptions().getGeneratorOptions().get("ApiGenerator");			
+			SpringGenerator generatorApi = new SpringGenerator(goApi);
+			generatorApi.generate("api");
+			
+			JOptionPane.showMessageDialog(null, "Code is successfully generated! Generated code is in folder: " + goTable.getOutputPath() +
+					                         ", package: " + goTable.getFilePackage());
 			exportToXml();
 		} catch (AnalyzeException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
