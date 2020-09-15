@@ -29,15 +29,20 @@ public class SpringGenerator extends BasicGenerator {
 		super(generatorOptions);
 	}
 
-	public void generate() {
+	public void generate(String type) {
 
 		try {
 			super.generate();
 		} catch (IOException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
-
-		List<FMClass> classes = FMModel.getInstance().getClasses();
+		
+		List<FMClass> classes = null;
+		if(type.equals("table"))
+			classes = FMModel.getInstance().getClasses();
+		else if(type.equals("crud"))
+			classes = FMModel.getInstance().getCrudClasses();
+		
 		for (int i = 0; i < classes.size(); i++) {
 			FMClass cl = classes.get(i);
 			Writer out;

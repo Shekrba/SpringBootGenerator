@@ -33,6 +33,12 @@ public class MyPlugin extends com.nomagic.magicdraw.plugins.Plugin {
 		ProjectOptions.getProjectOptions().getGeneratorOptions().put("EJBGenerator", ejbOptions);
 				
 		ejbOptions.setTemplateDir(pluginDir + File.separator + ejbOptions.getTemplateDir()); //apsolutna putanja
+		
+		GeneratorOptions ejbOptionsCrud = new GeneratorOptions("c:/temp", "crud", "templates", "{0}crud.java", true, "spring"); 				
+		ProjectOptions.getProjectOptions().getGeneratorOptions().put("CrudGenerator", ejbOptionsCrud);
+		
+		ejbOptionsCrud.setTemplateDir(pluginDir + File.separator + ejbOptionsCrud.getTemplateDir()); //apsolutna putanja
+				
 	}
 
 	private NMAction[] getSubmenuActions()
