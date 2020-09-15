@@ -45,8 +45,13 @@ class GenerateAction extends MDAction{
 			analyzer.prepareModel();	
 			GeneratorOptions go = ProjectOptions.getProjectOptions().getGeneratorOptions().get("EJBGenerator");			
 			SpringGenerator generator = new SpringGenerator(go);
-			generator.generate();
+			generator.generate("table");
 			/**  @ToDo: Also call other generators */ 
+
+			GeneratorOptions goCrud = ProjectOptions.getProjectOptions().getGeneratorOptions().get("CrudGenerator");			
+			SpringGenerator generatorCrud = new SpringGenerator(goCrud);
+			generatorCrud.generate("crud");
+			
 			JOptionPane.showMessageDialog(null, "Code is successfully generated! Generated code is in folder: " + go.getOutputPath() +
 					                         ", package: " + go.getFilePackage());
 			exportToXml();

@@ -14,6 +14,9 @@ public class FMModel {
 	
 	//....
 	/** @ToDo: Add lists of other elements, if needed */
+	
+	private List<FMClass> crudClasses = new ArrayList<FMClass>();
+	
 	private FMModel() {
 		
 	}
@@ -34,5 +37,11 @@ public class FMModel {
 		this.classes = classes;
 	}
 
+	public List<FMClass> getCrudClasses() {
+		return classes;
+	}
+	public void setCrudClasses(List<FMClass> crudClasses) {
+		this.classes = crudClasses;
+	}
 
 }

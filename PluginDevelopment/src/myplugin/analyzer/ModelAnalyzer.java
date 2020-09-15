@@ -3,6 +3,8 @@ package myplugin.analyzer;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import myplugin.generator.fmmodel.ColumnProp;
 import myplugin.generator.fmmodel.FMClass;
 import myplugin.generator.fmmodel.FMEnumeration;
@@ -53,6 +55,7 @@ public class ModelAnalyzer {
 	
 	public void prepareModel() throws AnalyzeException {
 		FMModel.getInstance().getClasses().clear();
+		FMModel.getInstance().getCrudClasses().clear();
 		//FMModel.getInstance().getEnumerations().clear();
 		processPackage(root, filePackage);
 	}
@@ -76,7 +79,13 @@ public class ModelAnalyzer {
 				if (ownedElement instanceof Class) {
 					Class cl = (Class)ownedElement;
 					FMClass fmClass = getClassData(cl, packageName);
-					FMModel.getInstance().getClasses().add(fmClass);
+					if(fmClass!=null) {
+						FMModel.getInstance().getClasses().add(fmClass);
+						if(fmClass.isGenerateCreate() || fmClass.isGenerateRead() || fmClass.isGenerateUpdate() || fmClass.isGenerateDelete()) {
+							FMModel.getInstance().getCrudClasses().add(fmClass);
+							//JOptionPane.showMessageDialog(null, fmClass.getClassName());
+						}
+					}
 				}
 				
 				/*if (ownedElement instanceof Enumeration) {
@@ -109,6 +118,8 @@ public class ModelAnalyzer {
 		
 		Stereotype tableSt = StereotypesHelper.getAppliedStereotypeByString(cl, "Table");
 		
+		//to do: logic when tableSt = null
+		
 		String tableName = "";
 		boolean isEntity = false;
 		
@@ -124,8 +135,39 @@ public class ModelAnalyzer {
 			tableName = null;
 		}
 		
+		boolean generateCreate = false;
+		boolean generateUpdate = false;
+		boolean generateRead = false;
+		boolean generateDelete = false;
+		
+		Stereotype crudSt = StereotypesHelper.getAppliedStereotypeByString(cl, "CRUD");
+		if(crudSt != null) {
+		    //create
+			List createList = StereotypesHelper.getStereotypePropertyValue(cl, crudSt,"create");
+		    if (createList!=null && !createList.isEmpty()){
+		    	generateCreate = (boolean)createList.get(0);
+		    }
+		    
+		    //update
+			List updateList = StereotypesHelper.getStereotypePropertyValue(cl, crudSt,"update");
+		    if (updateList!=null && !updateList.isEmpty()){
+		    	generateUpdate = (boolean)updateList.get(0);
+		    }
+		    
+		    //read
+			List readList = StereotypesHelper.getStereotypePropertyValue(cl, crudSt,"read");
+		    if (readList!=null && !readList.isEmpty()){
+		    	generateRead = (boolean)readList.get(0);
+		    }
+		    
+		    //delete
+			List deleteList = StereotypesHelper.getStereotypePropertyValue(cl, crudSt,"delete");
+		    if (deleteList!=null && !deleteList.isEmpty()){
+		    	generateDelete = (boolean)deleteList.get(0);
+		    }
+		}
 			
-		FMClass fmClass = new FMClass(tableName,cl.getName(), isEntity, packageName);
+		FMClass fmClass = new FMClass(tableName,cl.getName(), isEntity, packageName, generateCreate, generateUpdate, generateRead, generateDelete);
 		
 		Iterator<Property> it = ModelHelper.attributes(cl);
 		while (it.hasNext()) {
