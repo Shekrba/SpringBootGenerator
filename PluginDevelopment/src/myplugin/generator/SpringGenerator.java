@@ -12,6 +12,7 @@ import freemarker.template.TemplateException;
 import myplugin.generator.fmmodel.FMClass;
 import myplugin.generator.fmmodel.FMModel;
 import myplugin.generator.options.GeneratorOptions;
+import myplugin.generator.options.ProjectOptions;
 
 /**
  * EJB generator that now generates incomplete ejb classes based on MagicDraw
