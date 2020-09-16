@@ -31,18 +31,27 @@ public class MyPlugin extends com.nomagic.magicdraw.plugins.Plugin {
 		//for test purpose only:
 		GeneratorOptions tableOptions = new GeneratorOptions("c:/temp", "model", "templates", "{0}.java", true, "spring");
 		ProjectOptions.getProjectOptions().getGeneratorOptions().put("TableGenerator", tableOptions);
-				
 		tableOptions.setTemplateDir(pluginDir + File.separator + tableOptions.getTemplateDir()); //apsolutna putanja
 		
 		GeneratorOptions repoOptions = new GeneratorOptions("c:/temp", "repo", "templates", "{0}Repo.java", true, "spring"); 				
 		ProjectOptions.getProjectOptions().getGeneratorOptions().put("RepoGenerator", repoOptions);
-		
 		repoOptions.setTemplateDir(pluginDir + File.separator + repoOptions.getTemplateDir()); //apsolutna putanja
 		
 		GeneratorOptions apiOptions = new GeneratorOptions("c:/temp", "api", "templates", "{0}Api.java", true, "spring"); 				
 		ProjectOptions.getProjectOptions().getGeneratorOptions().put("ApiGenerator", apiOptions);
-		
 		apiOptions.setTemplateDir(pluginDir + File.separator + apiOptions.getTemplateDir()); //apsolutna putanja
+		
+		GeneratorOptions listTemplateOptions = new GeneratorOptions("c:/temp", "listTemplate", "templates", "ListTemplate.ts", true, "angular"); 				
+		ProjectOptions.getProjectOptions().getGeneratorOptions().put("ListTemplateGenerator", listTemplateOptions);
+		listTemplateOptions.setTemplateDir(pluginDir + File.separator + listTemplateOptions.getTemplateDir()); //apsolutna putanja
+		
+		GeneratorOptions formOptions = new GeneratorOptions("c:/temp", "form", "templates", "{0}Form.json", true, "angular"); 				
+		ProjectOptions.getProjectOptions().getGeneratorOptions().put("FormGenerator", formOptions);
+		formOptions.setTemplateDir(pluginDir + File.separator + formOptions.getTemplateDir()); //apsolutna putanja
+		
+		GeneratorOptions navOptions = new GeneratorOptions("c:/temp", "nav", "templates", "Nav.ts", true, "angular"); 				
+		ProjectOptions.getProjectOptions().getGeneratorOptions().put("NavGenerator", navOptions);
+		navOptions.setTemplateDir(pluginDir + File.separator + navOptions.getTemplateDir()); //apsolutna putanja
 				
 	}
 

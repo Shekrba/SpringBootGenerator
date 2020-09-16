@@ -32,30 +32,25 @@ public class SpringGenerator extends BasicGenerator {
 	public void generate(String type) {
 		
 		List<FMClass> classes = null;
-		if(type.equals("table"))
-			classes = FMModel.getInstance().getClasses();
-		else if(type.equals("repo") || type.equals("api"))
+		if(type.equals("listTemplate") || type.equals("nav")) {
 			classes = FMModel.getInstance().getCrudClasses();
-		
-		if(classes != null && classes.size() > 0) {
-			try {
-				super.generate();
-			} catch (IOException e) {
-				JOptionPane.showMessageDialog(null, e.getMessage());
+			
+			if(classes != null && classes.size() > 0) {
+				try {
+					super.generate();
+				} catch (IOException e) {
+					JOptionPane.showMessageDialog(null, e.getMessage());
+				}
 			}
-		}
-		
-		for (int i = 0; i < classes.size(); i++) {
-			FMClass cl = classes.get(i);
+			
 			Writer out;
 			Map<String, Object> context = new HashMap<String, Object>();
 			try {
-				out = getWriter(cl.getClassName(), cl.getClassPackage());
+				//classes.get(0).getClassPackage()
+				out = getWriter("listTemplate", "angular" );
 				if (out != null) {
 					context.clear();
-					context.put("class", cl);
-					context.put("properties", cl.getProperties());
-					context.put("importedPackages", cl.getImportedPackages());
+					context.put("classes", classes);
 					getTemplate().process(context, out);
 					out.flush();
 				}
@@ -63,6 +58,43 @@ public class SpringGenerator extends BasicGenerator {
 				JOptionPane.showMessageDialog(null, e.getMessage());
 			} catch (IOException e) {
 				JOptionPane.showMessageDialog(null, e.getMessage());
+			}
+		}else {
+			if(type.equals("table"))
+				classes = FMModel.getInstance().getClasses();
+			else if(type.equals("repo") || type.equals("api") || type.equals("form"))
+				classes = FMModel.getInstance().getCrudClasses();
+			
+			if(classes != null && classes.size() > 0) {
+				try {
+					super.generate();
+				} catch (IOException e) {
+					JOptionPane.showMessageDialog(null, e.getMessage());
+				}
+			}
+			
+			for (int i = 0; i < classes.size(); i++) {
+				FMClass cl = classes.get(i);
+				Writer out;
+				Map<String, Object> context = new HashMap<String, Object>();
+				try {
+					if(type.equals("form")) {
+						cl.setClassPackage("angular");
+					}
+					out = getWriter(cl.getClassName(), cl.getClassPackage());
+					if (out != null) {
+						context.clear();
+						context.put("class", cl);
+						context.put("properties", cl.getProperties());
+						context.put("importedPackages", cl.getImportedPackages());
+						getTemplate().process(context, out);
+						out.flush();
+					}
+				} catch (TemplateException e) {
+					JOptionPane.showMessageDialog(null, e.getMessage());
+				} catch (IOException e) {
+					JOptionPane.showMessageDialog(null, e.getMessage());
+				}
 			}
 		}
 	}
