@@ -1,0 +1,50 @@
+{
+    "form":[
+        {
+            "id":"firstName",
+            "type":"text",
+            "name":"Ime",
+            "row":0,
+            "col":0,
+            "validation":{
+                "required":true
+            }
+        },
+        {
+            "id":"lastName",
+            "type":"text",
+            "name":"Prezime",
+            "row":1,
+            "col":0,
+            "validation":{
+                "required":true
+            }
+        },
+        {
+            "id":"merchantId",
+            "type":"text",
+            "name":"Merchant ID",
+            "row":2,
+            "col":0,
+            "validation":{
+                "required":true
+            }
+        },
+        {
+            "id":"merchantPassword",
+            "type":"password",
+            "name":"Merchant Lozinka",
+            "row":3,
+            "col":0,
+            "validation":{
+                "required":true
+            }
+        }
+    ],
+    "button":{
+        "name":"Završi",
+        "url":"https://192.168.43.161:8771/bank/api/register",
+        "method":"post"
+    },
+    "header":"Registracija Prodavca u Banci"
+}
