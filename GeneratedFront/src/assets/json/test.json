@@ -39,6 +39,14 @@
             "validation":{
                 "required":true
             }
+        },
+        {
+            "id":"assoc",
+            "type":"oneToMany",
+            "name":"Assoc",
+            "row":4,
+            "col":0,
+            "uri":"http://localhost:8088/test"
         }
     ],
     "button":{

@@ -15,6 +15,8 @@ export class GenericFormComponent implements OnInit {
 
   constructor(private sanitizer: DomSanitizer,private genericService:GenericService,private activatedRoute: ActivatedRoute, private httpClient:HttpClient) {}
 
+
+
   private body={};
   private json=null;
   private button="Submit";
@@ -25,6 +27,9 @@ export class GenericFormComponent implements OnInit {
       cols:[]
     }
   ]
+  private oTmColumns={};
+  private oTmData={};
+
 
   ngOnInit() {
 
@@ -32,7 +37,6 @@ export class GenericFormComponent implements OnInit {
 
     this.httpClient.get("assets/json/"+this.activatedRoute.snapshot.paramMap.get('filePath')+".json").subscribe(
       data => {
-        console.log(data);
         
         this.json = data;
       
@@ -83,6 +87,18 @@ export class GenericFormComponent implements OnInit {
 
     if(this.json.header !== undefined){
       this.header = this.json.header;
+    }
+
+    if(this.json.form.some(item => item.type === 'oneToMany')){
+      let oneToManyFields = this.json.form.filter(item => item.type === 'oneToMany');
+      for(let field of oneToManyFields){
+        console.log(field);
+        this.genericService.sendActionToBackend("",field.uri,"get").subscribe(ret => {
+          console.log(ret);
+          this.oTmData[field.id] = ret;
+          this.oTmColumns[field.id] = Object.keys(ret[0]);
+        });
+      }
     }
   }
 

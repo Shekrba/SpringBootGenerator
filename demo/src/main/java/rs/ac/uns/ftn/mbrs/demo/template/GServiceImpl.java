@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class GServiceImpl<T> implements GService<T> {
 
@@ -11,6 +13,11 @@ public class GServiceImpl<T> implements GService<T> {
 
     public GServiceImpl(JpaRepository<T,Long> gRepo) {
         this.gRepo=gRepo;
+    }
+
+    @Override
+    public List<T> getAll() {
+        return gRepo.findAll();
     }
 
     @Override

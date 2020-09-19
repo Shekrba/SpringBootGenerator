@@ -35,6 +35,14 @@
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" class="form-control" type="tel" *ngIf="item.type == 'tel'">
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" class="form-control" type="time" *ngIf="item.type == 'time'">
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" class="form-control" type="week" *ngIf="item.type == 'week'">
+                              <table *ngIf="item.type == 'oneToMany'">
+                                <th *ngFor="let col of oTmColumns[item.id]">{{col}}</th><th></th><th></th>
+                                <tr *ngFor="let data of oTmData[item.id]">
+                                  <td *ngFor="let item of data | keyvalue">{{item.value}}</td>
+                                  <td><button class="btn btn-success">Edit</button></td>
+                                  <td><button class="btn btn-danger">Delete</button></td>
+                                </tr>
+                              </table>
                           </ng-container>
 
                           <!--IF REQUIRED-->

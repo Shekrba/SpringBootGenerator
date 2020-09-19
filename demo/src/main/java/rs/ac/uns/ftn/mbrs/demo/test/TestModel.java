@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @JsonIgnoreProperties(ignoreUnknown = true,
-        value = {"hibernateLazyInitializer", "handler", "created"})
+        value = {"hibernateLazyInitializer"})
 @Getter
 @Setter
 @NoArgsConstructor
