@@ -362,7 +362,15 @@ public class ModelAnalyzer {
 				inversejoinColumns = null;
 			}
 		    
-		    ManyToMany manyToMany = new ManyToMany(attType.getName(), p.getVisibility().toString(), p.getName(), columnName, fetchType, cascadeType, joinColumns, inversejoinColumns);
+	    	List helperList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"helper");
+		    String helper = "";
+		    if (helperList!=null && !helperList.isEmpty()){
+		    	helper = helperList.get(0).toString();
+			}else {
+				helper = null;
+			}
+		    
+		    ManyToMany manyToMany = new ManyToMany(attType.getName(), p.getVisibility().toString(), p.getName(), columnName, fetchType, cascadeType, joinColumns, inversejoinColumns, helper);
 		    return manyToMany;
 	    } 
 	    

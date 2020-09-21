@@ -56,7 +56,7 @@ public class ${class.className} {
 	<#elseif property.class.name?ends_with(".ManyToMany")>
 	@ManyToMany
     	@JoinTable(
-            name = "${property.inverseJoinColumns}_${property.JoinColumns}",
+            name = "${property.inverseJoinColumns}_${property.joinColumns}",
             joinColumns = @JoinColumn(name = "${property.joinColumns}_id"),
             inverseJoinColumns = @JoinColumn(name = "${property.inverseJoinColumns}_id")
     	)
@@ -68,24 +68,6 @@ public class ${class.className} {
 
 	public ${class.className}() {
 
-	}
-	
-	public ${class.className}DTO createDTO(){
-		${class.className}DTO dto = new ${class.className}DTO();
-		<#list properties as property>
-			<#if property.class.name?ends_with(".ColumnProp")>
-				dto.set${property.propertyName?cap_first}(${property.propertyName});
-			<#elseif property.class.name?ends_with(".ManyToOne")>
-				dto.set${property.propertyName?cap_first}Id(${property.propertyName}.getId());
-			<#elseif property.class.name?ends_with(".OneToMany") || property.class.name?ends_with(".ManyToMany")>			
-				foreach(${property.type} x in ${property.propertyName}){
-					dto.get${property.propertyName?cap_first}Set.add(x);
-				}
-			<#else>
-				dto.set${property.propertyName?cap_first}(${property.propertyName});
-			</#if>	
-		</#list>
-		return dto;
 	}
 
 }
