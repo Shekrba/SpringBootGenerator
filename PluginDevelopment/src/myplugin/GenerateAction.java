@@ -73,6 +73,17 @@ class GenerateAction extends MDAction{
 			SpringGenerator generatorNav = new SpringGenerator(goNav);
 			generatorNav.generate("nav");
 			
+			analyzer.prepareModel();
+			GeneratorOptions goService = ProjectOptions.getProjectOptions().getGeneratorOptions().get("ServiceGenerator");			
+			SpringGenerator generatorService = new SpringGenerator(goService);
+			generatorService.generate("service");
+			
+			analyzer.prepareModel();
+			GeneratorOptions goDto = ProjectOptions.getProjectOptions().getGeneratorOptions().get("DtoGenerator");			
+			SpringGenerator generatorDto = new SpringGenerator(goDto);
+			generatorDto.generate("dto");
+			
+			
 			JOptionPane.showMessageDialog(null, "Code is successfully generated! Generated code is in folder: " + goTable.getOutputPath() +
 					                         ", package: " + goTable.getFilePackage());
 			exportToXml();
