@@ -7,11 +7,9 @@ import rs.ac.uns.ftn.mbrs.demo.template.GController;
 
 @RestController
 @RequestMapping("/${class.className?lower_case}")
-public class ${class.className}Api extends GController<${class.className}>{
+public class ${class.className}Api extends GController<${class.className}, ${class.className}DTO>{
 
-	@Autowired
-	public ${class.className}Api(${class.className}Repo repo) {
-		super(repo);
+	public ${class.className}Api(${class.className}ServiceImpl gService) {
+		super(gService);
 	}
-
 }
