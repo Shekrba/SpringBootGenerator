@@ -69,6 +69,21 @@ export class GenericFormComponent implements OnInit {
         }
         this.rows[field.row].cols[field.col] = field;
       }
+
+      if(field.type!==undefined && field.type=="select"){
+        if(field.getOptionsUrl!==undefined){
+          this.genericService.getSelectOptions(field.getOptionsUrl).subscribe(
+            res => {
+              field.options = res;
+            },
+            err => {
+              console.log(err);
+              alert(err);
+            }
+          );
+        }
+      }
+
     }
 
     this.rows = this.rows.filter(function (el) {
@@ -86,7 +101,19 @@ export class GenericFormComponent implements OnInit {
     }
 
     if(this.json.header !== undefined){
-      this.header = this.json.header;
+      if(this.method == "post"){
+        this.header = "Add "+this.json.header;
+      }
+      else if(this.method == "put"){
+        this.header = "Update "+this.json.header;
+      }
+      else if(this.method == "delete"){
+        this.header = "Delete "+this.json.header;
+      }
+      else{
+        this.header = this.json.header;
+      }
+
     }
 
     if(this.json.form.some(item => item.type === 'oneToMany')){
@@ -122,7 +149,7 @@ export class GenericFormComponent implements OnInit {
       },
       err => {
         console.log(err);
-        alert("Error while calling backend");
+        alert(err);
       }
     );
   }
