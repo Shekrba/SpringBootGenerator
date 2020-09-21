@@ -55,7 +55,7 @@ public class MyPlugin extends com.nomagic.magicdraw.plugins.Plugin {
 		ProjectOptions.getProjectOptions().getGeneratorOptions().put("NavGenerator", navOptions);
 		navOptions.setTemplateDir(pluginDir + File.separator + navOptions.getTemplateDir()); //apsolutna putanja
 
-		GeneratorOptions serviceOptions = new GeneratorOptions("c:/temp", "service", "templates", "{0}Service.java", true, "spring"); 				
+		GeneratorOptions serviceOptions = new GeneratorOptions("c:/temp", "service", "templates", "{0}ServiceImpl.java", true, "spring"); 				
 		ProjectOptions.getProjectOptions().getGeneratorOptions().put("ServiceGenerator", serviceOptions);
 		serviceOptions.setTemplateDir(pluginDir + File.separator + serviceOptions.getTemplateDir()); //apsolutna putanja
 
