@@ -51,7 +51,7 @@ public class MyPlugin extends com.nomagic.magicdraw.plugins.Plugin {
 		ProjectOptions.getProjectOptions().getGeneratorOptions().put("FormGenerator", formOptions);
 		formOptions.setTemplateDir(pluginDir + File.separator + formOptions.getTemplateDir()); //apsolutna putanja
 		
-		GeneratorOptions navOptions = new GeneratorOptions("c:/temp", "nav", "templates", "Nav.ts", true, "angular"); 				
+		GeneratorOptions navOptions = new GeneratorOptions("c:/temp", "nav", "templates", "entity-list.component.html", true, "angular"); 				
 		ProjectOptions.getProjectOptions().getGeneratorOptions().put("NavGenerator", navOptions);
 		navOptions.setTemplateDir(pluginDir + File.separator + navOptions.getTemplateDir()); //apsolutna putanja
 
