@@ -41,6 +41,8 @@ public class MyPlugin extends com.nomagic.magicdraw.plugins.Plugin {
 		ProjectOptions.getProjectOptions().getGeneratorOptions().put("ApiGenerator", apiOptions);
 		apiOptions.setTemplateDir(pluginDir + File.separator + apiOptions.getTemplateDir()); //apsolutna putanja
 		
+		//to do ftl-s
+		
 		GeneratorOptions listTemplateOptions = new GeneratorOptions("c:/temp", "listTemplate", "templates", "ListTemplate.ts", true, "angular"); 				
 		ProjectOptions.getProjectOptions().getGeneratorOptions().put("ListTemplateGenerator", listTemplateOptions);
 		listTemplateOptions.setTemplateDir(pluginDir + File.separator + listTemplateOptions.getTemplateDir()); //apsolutna putanja
@@ -52,7 +54,15 @@ public class MyPlugin extends com.nomagic.magicdraw.plugins.Plugin {
 		GeneratorOptions navOptions = new GeneratorOptions("c:/temp", "nav", "templates", "Nav.ts", true, "angular"); 				
 		ProjectOptions.getProjectOptions().getGeneratorOptions().put("NavGenerator", navOptions);
 		navOptions.setTemplateDir(pluginDir + File.separator + navOptions.getTemplateDir()); //apsolutna putanja
-				
+
+		GeneratorOptions serviceOptions = new GeneratorOptions("c:/temp", "service", "templates", "{0}Service.java", true, "spring"); 				
+		ProjectOptions.getProjectOptions().getGeneratorOptions().put("ServiceGenerator", serviceOptions);
+		serviceOptions.setTemplateDir(pluginDir + File.separator + serviceOptions.getTemplateDir()); //apsolutna putanja
+
+		GeneratorOptions dtoOptions = new GeneratorOptions("c:/temp", "dto", "templates", "{0}DTO.java", true, "spring"); 				
+		ProjectOptions.getProjectOptions().getGeneratorOptions().put("DtoGenerator", dtoOptions);
+		dtoOptions.setTemplateDir(pluginDir + File.separator + dtoOptions.getTemplateDir()); //apsolutna putanja
+		
 	}
 
 	private NMAction[] getSubmenuActions()

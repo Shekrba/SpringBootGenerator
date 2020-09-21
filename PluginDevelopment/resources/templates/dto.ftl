@@ -24,15 +24,15 @@ public class ${class.className}DTO {
 	${property.visibility} ${property.type} ${property.propertyName};   
 
 	<#elseif property.class.name?ends_with(".OneToMany")>
-	${property.visibility} Set<${Long}> ${property.propertyName}Set = new HashSet<${Long}>();
+	${property.visibility} Set<Long> ${property.propertyName}Set = new HashSet<Long>();
 
 	<#elseif property.class.name?ends_with(".ManyToOne")>
-	${property.visibility} ${Long} ${property.propertyName}Id;  
+	${property.visibility} Long ${property.propertyName}Id;  
 
 	<#elseif property.class.name?ends_with(".ManyToMany")>
-    	${property.visibility} Set<${Long}> ${property.propertyName}Set = new HashSet<>();	
-    	<#else>
-    	${property.visibility} ${property.type} ${property.propertyName};   
+    ${property.visibility} Set<Long> ${property.propertyName}Set = new HashSet<Long>();	
+    <#else>
+    ${property.visibility} ${property.type} ${property.propertyName};   
 	</#if>  
 </#list>
 
