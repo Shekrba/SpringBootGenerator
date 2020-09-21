@@ -62,7 +62,7 @@ public class SpringGenerator extends BasicGenerator {
 		}else {
 			if(type.equals("table"))
 				classes = FMModel.getInstance().getClasses();
-			else if(type.equals("repo") || type.equals("api") || type.equals("form"))
+			else if(type.equals("repo") || type.equals("api") || type.equals("form")  || type.equals("service") || type.equals("dto"))
 				classes = FMModel.getInstance().getCrudClasses();
 			
 			if(classes != null && classes.size() > 0) {
