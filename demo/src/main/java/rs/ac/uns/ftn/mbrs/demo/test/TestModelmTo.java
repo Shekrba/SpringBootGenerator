@@ -1,14 +1,11 @@
 package rs.ac.uns.ftn.mbrs.demo.test;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @JsonIgnoreProperties(ignoreUnknown = true,
         value = {"hibernateLazyInitializer"})
@@ -16,16 +13,15 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @Entity
-public class TestModel {
+public class TestModelmTo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String testStr;
+    private String strTestmTo;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "testModel", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Set<TestModelmTo> testModelmToSet = new HashSet<TestModelmTo>();
+    @ManyToOne(fetch = FetchType.EAGER)
+    private TestModel testModel;
 
 }

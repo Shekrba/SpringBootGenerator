@@ -2,10 +2,12 @@ package rs.ac.uns.ftn.mbrs.demo.template;
 
 import java.util.List;
 
-public interface GService<T> {
-    List<T> getAll();
-    T save(T obj);
-    T update(T obj);
-    T get(long id);
+public interface GService<S,T> {
+
+    List<S> getAll();
+    S save(T obj);
+    S update(T obj);
+    S get(long id);
     void delete(long id);
+
 }
