@@ -36,8 +36,4 @@ export class GenericService {
     }
 
   } 
-
-  public getSelectOptions(url): Observable<any>{
-    return this.http.get(url);
-  }
 }

@@ -15,12 +15,20 @@
                           
                           <!--IF NOT REQUIRED-->
                           <ng-container *ngIf="(item.validation !== undefined && item.validation.required != true) || item.validation === undefined">
-                              <label class="text-light" for="{{item.id}}" *ngIf="item.name !== undefined">{{item.name}}: </label>
+                              <label class="text-light" for="{{item.id}}" *ngIf="item.name !== undefined && item.type != 'oneToMany'">{{item.name}}: </label>
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" type="text" class="form-control" pattern="{{item.validation.pattern}}" *ngIf="item.type == 'text'"/>
-                              <select name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" class="form-control" *ngIf="item.type == 'select'">
-                                  <option *ngFor="let opt of item.options" value="{{opt.value}}">
-                                      {{opt.text}}
-                                  </option>
+                              <label class="text-light" for="{{item.id}}" *ngIf="item.name !== undefined && item.type == 'oneToMany' && method == 'put'">{{item.name}}: </label>
+                              <select name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" *ngIf="item.type == 'manyToMany'"
+                                class="selectpicker form-control" 
+                                multiple>
+                                    <option *ngFor="let opt of item.options" value="{{opt.value}}">
+                                        {{opt.text}}
+                                    </option>
+                              </select>
+                              <select name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" *ngIf="item.type == 'manyToOne'" class="form-control">
+                                    <option *ngFor="let opt of item.options" value="{{opt.value}}">
+                                        {{opt.text}}
+                                    </option>
                               </select>
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" class="form-control" type="checkbox" *ngIf="item.type == 'checkbox'">
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" class="form-control" type="date" *ngIf="item.type == 'date'">
@@ -35,7 +43,7 @@
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" class="form-control" type="tel" *ngIf="item.type == 'tel'">
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" class="form-control" type="time" *ngIf="item.type == 'time'">
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" class="form-control" type="week" *ngIf="item.type == 'week'">
-                              <table *ngIf="item.type == 'oneToMany'">
+                              <table *ngIf="item.type == 'oneToMany' && method == 'put'">
                                 <th *ngFor="let col of oTmColumns[item.id]">{{col}}</th><th></th><th></th>
                                 <tr *ngFor="let data of oTmData[item.id]">
                                   <td *ngFor="let item of data | keyvalue">{{item.value}}</td>
@@ -47,12 +55,20 @@
 
                           <!--IF REQUIRED-->
                           <ng-container *ngIf="item.validation !== undefined && item.validation.required == true">
-                              <label class="text-light" for="{{item.id}}" *ngIf="item.name !== undefined">{{item.name}}: </label>
+                              <label class="text-light" for="{{item.id}}" *ngIf="item.name !== undefined && item.type != 'oneToMany'">{{item.name}}: </label>
+                              <label class="text-light" for="{{item.id}}" *ngIf="item.name !== undefined && item.type == 'oneToMany' && method == 'put'">{{item.name}}: </label>
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" type="text" class="form-control" pattern="{{item.validation.pattern}}" *ngIf="item.type == 'text'" required/>
-                              <select name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" class="form-control" *ngIf="item.type == 'select'" value="{{item.default}}" required>
-                                  <option *ngFor="let opt of item.options" value="{{opt.value}}">
-                                      {{opt.text}}
-                                  </option>
+                              <select name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" *ngIf="item.type == 'manyToMany'"
+                                class="selectpicker form-control" 
+                                multiple>
+                                    <option *ngFor="let opt of item.options" value="{{opt.value}}">
+                                        {{opt.text}}
+                                    </option>
+                              </select>
+                              <select name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" *ngIf="item.type == 'manyToOne'" class="form-control">
+                                    <option *ngFor="let opt of item.options" value="{{opt.value}}">
+                                        {{opt.text}}
+                                    </option>
                               </select>
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" class="form-control" type="checkbox" *ngIf="item.type == 'checkbox'" required>
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" class="form-control" type="date" *ngIf="item.type == 'date'" required>
@@ -67,7 +83,15 @@
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" class="form-control" type="tel" *ngIf="item.type == 'tel'" required>
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" class="form-control" type="time" *ngIf="item.type == 'time'" required>
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" class="form-control" type="week" *ngIf="item.type == 'week'" required>
-                          </ng-container>
+                              <table *ngIf="item.type == 'oneToMany' && method == 'put'">
+                                <th *ngFor="let col of oTmColumns[item.id]">{{col}}</th><th></th><th></th>
+                                <tr *ngFor="let data of oTmData[item.id]">
+                                  <td *ngFor="let item of data | keyvalue">{{item.value}}</td>
+                                  <td><button class="btn btn-success">Edit</button></td>
+                                  <td><button class="btn btn-danger">Delete</button></td>
+                                </tr>
+                              </table>
+                        </ng-container>
 
                       </div>
                   </div>

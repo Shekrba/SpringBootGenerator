@@ -46,11 +46,7 @@ export class GenericFormComponent implements OnInit {
 
   }
 
-  getJson(){
-
-
-    //this.json = JSON.parse(readFileSync(filePath, 'utf-8'));
-       
+  getJson(){  
     for(let field of this.json.form){
 
       if(field.default!=null){
@@ -70,11 +66,26 @@ export class GenericFormComponent implements OnInit {
         this.rows[field.row].cols[field.col] = field;
       }
 
-      if(field.type!==undefined && field.type=="select"){
+      //oneToMany manyToOne manyToMany
+      if(field.type!==undefined && (field.type=="manyToOne" || field.type=="manyToMany")) {
         if(field.getOptionsUrl!==undefined){
-          this.genericService.getSelectOptions(field.getOptionsUrl).subscribe(
+          this.genericService.sendActionToBackend(null,field.getOptionsUrl,"get").subscribe(
             res => {
-              field.options = res;
+              field.options = [];
+              
+              for(var opt of res){
+
+                let optText = JSON.stringify(Object.values(opt));
+                let optValue = opt.id;
+
+                field.options.push(
+                  {
+                    text:optText.substring(1, optText.length-1),
+                    value:optValue
+                  }
+                )
+              }
+            
             },
             err => {
               console.log(err);
@@ -116,15 +127,17 @@ export class GenericFormComponent implements OnInit {
 
     }
 
-    if(this.json.form.some(item => item.type === 'oneToMany')){
-      let oneToManyFields = this.json.form.filter(item => item.type === 'oneToMany');
-      for(let field of oneToManyFields){
-        console.log(field);
-        this.genericService.sendActionToBackend("",field.uri,"get").subscribe(ret => {
-          console.log(ret);
-          this.oTmData[field.id] = ret;
-          this.oTmColumns[field.id] = Object.keys(ret[0]);
-        });
+    if(this.method == "put"){
+      if(this.json.form.some(item => item.type === 'oneToMany')){
+        let oneToManyFields = this.json.form.filter(item => item.type === 'oneToMany');
+        for(let field of oneToManyFields){
+          console.log(field);
+          this.genericService.sendActionToBackend("",field.getOptionsUrl,"get").subscribe(ret => {
+            console.log(ret);
+            this.oTmData[field.id] = ret;
+            this.oTmColumns[field.id] = Object.keys(ret[0]);
+          });
+        }
       }
     }
   }
