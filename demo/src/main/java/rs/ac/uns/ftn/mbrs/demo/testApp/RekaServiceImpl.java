@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import rs.ac.uns.ftn.mbrs.demo.template.GService;
 import rs.ac.uns.ftn.mbrs.demo.utils.ObjectMapperUtils;
 
+import java.util.HashSet;
 import java.util.List;
 
 @Service
@@ -18,7 +19,7 @@ public class RekaServiceImpl implements GService<Reka, RekaDTO> {
     
     @Override
     public List<Reka> getAll() {
-        return reka.findAll();
+        return rekaRepo.findAll();
     }
 
     @Override
@@ -38,12 +39,14 @@ public class RekaServiceImpl implements GService<Reka, RekaDTO> {
 	@Override
     public Reka update(RekaDTO obj) {
     	Reka reka = ObjectMapperUtils.map(obj, Reka.class);
-    
+
+		Reka oldReka = rekaRepo.getOne(obj.getId());
+
+
 		for(Grad grad : oldReka.getGradovi()){
 			grad.getReke().remove(oldReka);
 		}
 		
-		Reka oldReka = rekaRepo.getOne(obj.getId());
 		oldReka.setGradovi(new HashSet<>());
 				
 		for(Long id : obj.getGradovi()){
@@ -62,7 +65,7 @@ public class RekaServiceImpl implements GService<Reka, RekaDTO> {
     }
 	
 	@Override
-    public Reka delete(Long id) {
-    	return rekaRepo.delete(reka.getOne(id));
+    public void delete(Long id) {
+    	rekaRepo.delete(rekaRepo.getOne(id));
     }
 }

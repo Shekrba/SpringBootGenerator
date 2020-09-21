@@ -11,14 +11,14 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
-public class RekaDTO {  
+public class RekaDTO {
+
+    private Long id;
 	
     private String naziv;   
 	
-    private Set<Long> gradoviSet = new HashSet<Long>();	
+    private Set<Long> gradovi = new HashSet<Long>();
 
-	public RekaDTO() {
 
-	}
 
 }

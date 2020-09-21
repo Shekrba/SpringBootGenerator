@@ -15,7 +15,7 @@ public class DrzavaServiceImpl implements GService<Drzava, DrzavaDTO> {
     
     @Override
     public List<Drzava> getAll() {
-        return drzava.findAll();
+        return drzavaRepo.findAll();
     }
 
     @Override
@@ -40,7 +40,7 @@ public class DrzavaServiceImpl implements GService<Drzava, DrzavaDTO> {
     }
 	
 	@Override
-    public Drzava delete(Long id) {
-    	return drzavaRepo.delete(drzava.getOne(id));
+    public void delete(Long id) {
+    	drzavaRepo.delete(drzavaRepo.getOne(id));
     }
 }

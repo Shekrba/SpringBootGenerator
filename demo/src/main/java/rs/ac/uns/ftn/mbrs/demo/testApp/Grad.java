@@ -1,17 +1,10 @@
 package rs.ac.uns.ftn.mbrs.demo.testApp;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.ManyToMany;
+
+import javax.persistence.*;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.NoArgsConstructor;
@@ -26,18 +19,22 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "grad")
-public class Grad {  
-	
+public class Grad {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+
     private String naziv;   
 	
     private Integer brojStanovnika;   
 	
     private String zip;   
-	
-	@ManyToOne(mappedBy = "gradovi")
-	private Drzava drzava;  
 
-	
+	@ManyToOne()
+	private Drzava drzava;
+
+	@JsonIgnore
 	@ManyToMany
     	@JoinTable(
             name = "grad_reka",
@@ -46,8 +43,5 @@ public class Grad {
     	)
     private Set<Reka> reke = new HashSet<>();	
 
-	public Grad() {
-
-	}
 
 }

@@ -1,5 +1,6 @@
 package rs.ac.uns.ftn.mbrs.demo.testApp;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -26,20 +27,22 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "drzava")
-public class Drzava {  
+public class Drzava {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 	
     private String naziv;   
 	
     private Integer brojStanovnika;   
 	
-    private String glavniGrad;   
-	
+    private String glavniGrad;
+
+	@JsonIgnore
 	@OneToMany(mappedBy = "drzava")
 	private Set<Grad> gradovi = new HashSet<Grad>();
 
 
-	public Drzava() {
-
-	}
 
 }

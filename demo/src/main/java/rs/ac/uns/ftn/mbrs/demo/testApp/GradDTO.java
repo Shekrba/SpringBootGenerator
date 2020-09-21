@@ -11,7 +11,9 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
-public class GradDTO {  
+public class GradDTO {
+
+    private Long id;
 	
     private String naziv;   
 	
@@ -22,10 +24,8 @@ public class GradDTO {
 	private Long drzava;  
 
 	
-    private Set<Long> rekeSet = new HashSet<Long>();	
+    private Set<Long> reke = new HashSet<Long>();
 
-	public GradDTO() {
 
-	}
 
 }

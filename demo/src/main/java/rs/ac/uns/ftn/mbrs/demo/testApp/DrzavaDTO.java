@@ -11,7 +11,9 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
-public class DrzavaDTO {  
+public class DrzavaDTO {
+
+    private Long id;
 	
     private String naziv;   
 	
@@ -22,8 +24,6 @@ public class DrzavaDTO {
 	private Set<Long> gradovi = new HashSet<Long>();
 
 
-	public DrzavaDTO() {
 
-	}
 
 }

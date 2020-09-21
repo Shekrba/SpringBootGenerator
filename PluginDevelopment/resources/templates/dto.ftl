@@ -1,4 +1,4 @@
-package ${class.classPackage};
+package rs.ac.uns.ftn.mbrs.demo.testApp;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -18,7 +18,7 @@ public class ${class.className}DTO {
 <#list properties as property>
 	
 	<#if property.class.name?ends_with(".IdProp")>
-	${property.visibility} Long ${property.propertyName}Id;   
+	${property.visibility} Long ${property.propertyName};
 	
 	<#elseif property.class.name?ends_with(".ColumnProp")>
 	${property.visibility} ${property.type} ${property.propertyName};   
@@ -30,14 +30,12 @@ public class ${class.className}DTO {
 	${property.visibility} Long ${property.propertyName};  
 
 	<#elseif property.class.name?ends_with(".ManyToMany")>
-    ${property.visibility} Set<Long> ${property.propertyName}Set = new HashSet<Long>();	
+    ${property.visibility} Set<Long> ${property.propertyName} = new HashSet<Long>();
     <#else>
     ${property.visibility} ${property.type} ${property.propertyName};   
 	</#if>  
 </#list>
 
-	public ${class.className}DTO() {
 
-	}
 
 }
