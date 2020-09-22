@@ -1,0 +1,29 @@
+{
+	"form":[
+    	{
+		"id":"naziv",
+		"type":"text",
+		"name":"Naziv",
+		"row":0,
+		"col":0,
+		"validation":{
+			"required":true
+		}
+	}
+	,{
+		"id":"gradovi",
+		"type":"oneToMany",
+		"name":"Gradovi",
+		"row":1,
+		"col":0,
+		"validation":{
+			"required":true
+		}
+	}
+	],
+	"button":{
+		"name":"Submit",
+		"url":"http://localhost:8088/reka"
+	},
+	"header":"Reka"
+}
