@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { EntityListComponent } from './entity-list/entity-list.component';
+import { ListTemplateComponent } from './components/list-template/list-template.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { EntityListComponent } from './entity-list/entity-list.component';
     AppComponent,
     GenericFormComponent,
     SideBarComponent,
-    EntityListComponent
+    EntityListComponent,
+    ListTemplateComponent
   ],
   imports: [
     BrowserModule,
