@@ -3,8 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="dc57b479-ca76-4c9c-b79a-66f9c36d8236" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/test/TestApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/test/TestApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/test/TestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/test/TestModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/templates/api.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/resources/templates/api.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/templates/dto.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/resources/templates/dto.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/templates/model.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/resources/templates/model.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/templates/repo.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/resources/templates/repo.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/templates/service.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/resources/templates/service.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBootGenerator.mdzip" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBootGenerator.mdzip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/test/TestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/test/TestServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/test/TestmToServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/test/TestmToServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/testApp/Drzava.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/testApp/Drzava.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/testApp/DrzavaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/testApp/DrzavaDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/testApp/DrzavaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/testApp/DrzavaServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/testApp/Grad.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/testApp/Grad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/testApp/GradDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/testApp/GradDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/testApp/GradServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/testApp/GradServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/testApp/Reka.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/testApp/Reka.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/testApp/RekaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/testApp/RekaDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/testApp/RekaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/rs/ac/uns/ftn/mbrs/demo/testApp/RekaServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +58,7 @@
       <workItem from="1575539329806" duration="1497000" />
       <workItem from="1575842550550" duration="108000" />
       <workItem from="1600204107913" duration="3219000" />
+      <workItem from="1600730802528" duration="1729000" />
     </task>
     <servers />
   </component>

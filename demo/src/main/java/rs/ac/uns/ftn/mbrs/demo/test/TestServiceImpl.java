@@ -32,12 +32,12 @@ public class TestServiceImpl implements GService<TestModel,TestDTO> {
     }
 
     @Override
-    public TestModel get(long id) {
+    public TestModel get(Long id) {
         return testRepo.getOne(id);
     }
 
     @Override
-    public void delete(long id) {
+    public void delete(Long id) {
         testRepo.delete(testRepo.getOne(id));
     }
 

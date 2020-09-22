@@ -7,7 +7,7 @@ public interface GService<S,T> {
     List<S> getAll();
     S save(T obj);
     S update(T obj);
-    S get(long id);
-    void delete(long id);
+    S get(Long id);
+    void delete(Long id);
 
 }

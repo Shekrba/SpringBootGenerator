@@ -1,17 +1,8 @@
-package ${class.classPackage};
+package rs.ac.uns.ftn.mbrs.demo.testApp;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.NoArgsConstructor;
@@ -45,15 +36,18 @@ public class ${class.className} {
 	@Column(name = "${property.columnName}", unique = ${property.isUnique}, nullable = ${property.isNullable})
 	${property.visibility} ${property.type} ${property.propertyName};   
 
+
 	<#elseif property.class.name?ends_with(".OneToMany")>
+		@JsonIgnore
 	@OneToMany(mappedBy = "${property.mappedBy}"<#if property.fetchType??>, fetch = FetchType.${property.fetchType}</#if><#if property.cascadeType??>, cascade = CascadeType.${property.cascadeType}</#if>)
 	${property.visibility} Set<${property.type}> ${property.propertyName} = new HashSet<${property.type}>();
 
 	<#elseif property.class.name?ends_with(".ManyToOne")>
-	@ManyToOne(mappedBy = "${property.mappedBy}"<#if property.fetchType??>, fetch = FetchType.${property.fetchType}</#if><#if property.cascadeType??>, cascade = CascadeType.${property.cascadeType}</#if>)
+	@ManyToOne(<#if property.fetchType??> fetch = FetchType.${property.fetchType}</#if><#if property.cascadeType??>, cascade = CascadeType.${property.cascadeType}</#if>)
 	${property.visibility} ${property.type} ${property.propertyName};  
 
 	<#elseif property.class.name?ends_with(".ManyToMany")>
+		@JsonIgnore
 	@ManyToMany
     	@JoinTable(
             name = "${property.inverseJoinColumns}_${property.joinColumns}",
@@ -66,8 +60,6 @@ public class ${class.className} {
 	</#if>  
 </#list>
 
-	public ${class.className}() {
 
-	}
 
 }

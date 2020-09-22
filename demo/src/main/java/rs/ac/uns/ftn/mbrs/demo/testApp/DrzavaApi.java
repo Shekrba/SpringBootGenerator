@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RestController;
 import rs.ac.uns.ftn.mbrs.demo.template.GController;
 
 @RestController
-@RequestMapping("/${class.className?lower_case}")
-public class ${class.className}Api extends GController<${class.className}, ${class.className}DTO>{
+@RequestMapping("/drzava")
+public class DrzavaApi extends GController<Drzava, DrzavaDTO>{
 
-	public ${class.className}Api(${class.className}ServiceImpl gService) {
+	public DrzavaApi(DrzavaServiceImpl gService) {
 		super(gService);
 	}
 }

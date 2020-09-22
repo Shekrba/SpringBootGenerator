@@ -45,12 +45,12 @@ public class TestmToServiceImpl implements GService<TestModelmTo,TestmToDTO> {
     }
 
     @Override
-    public TestModelmTo get(long id) {
+    public TestModelmTo get(Long id) {
         return testmToRepo.getOne(id);
     }
 
     @Override
-    public void delete(long id) {
+    public void delete(Long id) {
         testmToRepo.delete(testmToRepo.getOne(id));
     }
 }
