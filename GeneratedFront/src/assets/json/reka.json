@@ -12,7 +12,8 @@
 	}
 	,{
 		"id":"gradovi",
-		"type":"oneToMany",
+		"type":"manyToMany",
+    "getOptionsUrl":"http://localhost:8088/grad",
 		"name":"Gradovi",
 		"row":1,
 		"col":0,

@@ -47,7 +47,7 @@ public class GradServiceImpl implements GService<Grad, GradDTO> {
 	@Override
     public Grad update(GradDTO obj) {
     	Grad grad = ObjectMapperUtils.map(obj, Grad.class);
-    
+
 		Drzava drzava = drzavaRepo.getOne(obj.getDrzava());
 		grad.setDrzava(drzava);
 		Grad oldGrad = gradRepo.getOne(obj.getId());
@@ -55,9 +55,9 @@ public class GradServiceImpl implements GService<Grad, GradDTO> {
 		drzava.getGradovi().add(grad);
 		grad = gradRepo.save(grad);
 		drzavaRepo.save(drzava);
-		for(Reka reka : oldGrad.getReke()){
+		/*for(Reka reka : oldGrad.getReke()){
 			reka.getGradovi().remove(oldGrad);
-		}
+		}*/
 		
 		oldGrad.setReke(new HashSet<>());
 				

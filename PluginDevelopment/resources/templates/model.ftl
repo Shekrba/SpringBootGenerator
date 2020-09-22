@@ -1,6 +1,6 @@
 package rs.ac.uns.ftn.mbrs.demo.testApp;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import javax.persistence.*;
 
 import lombok.Getter;
@@ -38,7 +38,10 @@ public class ${class.className} {
 
 
 	<#elseif property.class.name?ends_with(".OneToMany")>
-		@JsonIgnore
+		@JsonIdentityInfo(
+		generator = ObjectIdGenerators.PropertyGenerator.class,
+		property = "id")
+		@JsonIdentityReference(alwaysAsId=true)
 	@OneToMany(mappedBy = "${property.mappedBy}"<#if property.fetchType??>, fetch = FetchType.${property.fetchType}</#if><#if property.cascadeType??>, cascade = CascadeType.${property.cascadeType}</#if>)
 	${property.visibility} Set<${property.type}> ${property.propertyName} = new HashSet<${property.type}>();
 
@@ -47,7 +50,10 @@ public class ${class.className} {
 	${property.visibility} ${property.type} ${property.propertyName};  
 
 	<#elseif property.class.name?ends_with(".ManyToMany")>
-		@JsonIgnore
+		@JsonIdentityInfo(
+		generator = ObjectIdGenerators.PropertyGenerator.class,
+		property = "id")
+		@JsonIdentityReference(alwaysAsId=true)
 	@ManyToMany
     	@JoinTable(
             name = "${property.inverseJoinColumns}_${property.joinColumns}",

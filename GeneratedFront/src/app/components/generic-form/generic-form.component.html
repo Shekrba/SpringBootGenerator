@@ -18,13 +18,24 @@
                               <label class="text-light" for="{{item.id}}" *ngIf="item.name !== undefined && item.type != 'oneToMany'">{{item.name}}: </label>
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" type="text" class="form-control" pattern="{{item.validation.pattern}}" *ngIf="item.type == 'text'"/>
                               <label class="text-light" for="{{item.id}}" *ngIf="item.name !== undefined && item.type == 'oneToMany' && method == 'put'">{{item.name}}: </label>
-                              <select name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" *ngIf="item.type == 'manyToMany'"
+                              <!--select name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" *ngIf="item.type == 'manyToMany'"
                                 class="selectpicker form-control" 
                                 multiple>
                                     <option *ngFor="let opt of item.options" value="{{opt.value}}">
                                         {{opt.text}}
                                     </option>
-                              </select>
+                              </select-->
+                              <ng-multiselect-dropdown
+                                  [placeholder]="Select"
+                                  [data]="item.options"
+                                  [(ngModel)]="item.model"
+                                  [settings]="dropdownSettings"
+                                  (onSelect)="onItemSelect($event)"
+                                  (onSelectAll)="onSelectAll($event)"
+                                  name={{i}}
+                                  *ngIf="item.type == 'manyToMany'"
+                                >
+                                </ng-multiselect-dropdown>
                               <select name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" *ngIf="item.type == 'manyToOne'" class="form-control">
                                     <option *ngFor="let opt of item.options" value="{{opt.value}}">
                                         {{opt.text}}
@@ -44,7 +55,7 @@
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" class="form-control" type="time" *ngIf="item.type == 'time'">
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" class="form-control" type="week" *ngIf="item.type == 'week'">
                               <table *ngIf="item.type == 'oneToMany' && method == 'put'">
-                                <th *ngFor="let col of oTmColumns[item.id]">{{col}}</th><th></th><th></th>
+                                <th *ngFor="let stagod of oTmData[item.id][0] | keyvalue">{{stagod.key}}</th><th></th><th></th>
                                 <tr *ngFor="let data of oTmData[item.id]">
                                   <td *ngFor="let item of data | keyvalue">{{item.value}}</td>
                                   <td><button class="btn btn-success">Edit</button></td>
@@ -58,13 +69,24 @@
                               <label class="text-light" for="{{item.id}}" *ngIf="item.name !== undefined && item.type != 'oneToMany'">{{item.name}}: </label>
                               <label class="text-light" for="{{item.id}}" *ngIf="item.name !== undefined && item.type == 'oneToMany' && method == 'put'">{{item.name}}: </label>
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" type="text" class="form-control" pattern="{{item.validation.pattern}}" *ngIf="item.type == 'text'" required/>
-                              <select name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" *ngIf="item.type == 'manyToMany'"
+                              <!--select name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" *ngIf="item.type == 'manyToMany'"
                                 class="selectpicker form-control" 
                                 multiple>
                                     <option *ngFor="let opt of item.options" value="{{opt.value}}">
                                         {{opt.text}}
                                     </option>
-                              </select>
+                              </select-->
+                              <ng-multiselect-dropdown
+                                  [placeholder]="Select"
+                                  [data]="item.options"
+                                  [(ngModel)]="item.model"
+                                  [settings]="dropdownSettings"
+                                  (onSelect)="onItemSelect($event)"
+                                  (onSelectAll)="onSelectAll($event)"
+                                  name={{i}}
+                                  *ngIf="item.type == 'manyToMany'"
+                                >
+                                </ng-multiselect-dropdown>
                               <select name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" *ngIf="item.type == 'manyToOne'" class="form-control">
                                     <option *ngFor="let opt of item.options" value="{{opt.value}}">
                                         {{opt.text}}
@@ -83,11 +105,12 @@
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" class="form-control" type="tel" *ngIf="item.type == 'tel'" required>
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" class="form-control" type="time" *ngIf="item.type == 'time'" required>
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" class="form-control" type="week" *ngIf="item.type == 'week'" required>
+                              <a class="btn btn-primary" routerLink="/generic/{{item.typesType}}/post" *ngIf="item.type == 'oneToMany' && method == 'put'">Add</a>
                               <table *ngIf="item.type == 'oneToMany' && method == 'put'">
-                                <th *ngFor="let col of oTmColumns[item.id]">{{col}}</th><th></th><th></th>
+                                <th *ngFor="let stagod of oTmData[item.id][0] | keyvalue">{{stagod.key}}</th><th></th><th></th>
                                 <tr *ngFor="let data of oTmData[item.id]">
                                   <td *ngFor="let item of data | keyvalue">{{item.value}}</td>
-                                  <td><button class="btn btn-success">Edit</button></td>
+                                  <td><a class="btn btn-success" href="http://localhost:4200/generic/{{item.typesType}}/put/{{data.id}}">Edit</a></td>
                                   <td><button class="btn btn-danger">Delete</button></td>
                                 </tr>
                               </table>

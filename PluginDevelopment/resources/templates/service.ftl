@@ -77,10 +77,6 @@ public class ${class.className}ServiceImpl implements GService<${class.className
 		<#assign flag = true>
 		<#elseif property.class.name?ends_with(".ManyToMany")>
 			old${class.className} = ${class.className?lower_case}Repo.getOne(obj.getId());
-
-			for(${property.type} ${property.type?lower_case} : old${class.className}.get${property.propertyName?cap_first}()){
-			${property.type?lower_case}.get${property.helper?cap_first}().remove(old${class.className});
-		}
 		
 		old${class.className}.set${property.propertyName?cap_first}(new HashSet<>());
 				

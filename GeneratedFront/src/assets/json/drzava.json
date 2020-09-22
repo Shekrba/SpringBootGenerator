@@ -21,9 +21,9 @@
 		}
 	}
 	,{
-		"id":"zip",
+		"id":"glavniGrad",
 		"type":"text",
-		"name":"Zip",
+		"name":"Glavnigrad",
 		"row":2,
 		"col":0,
 		"validation":{
@@ -31,22 +31,13 @@
 		}
 	}
 	,{
-		"id":"drzava",
-		"type":"manyToOne",
-		"getOptionsUrl":"http://localhost:8088/drzava",
-		"name":"Drzava",
+		"id":"gradovi",
+		"type":"oneToMany",
+    "getOptionsUrl":"http://localhost:8088/grad",
+		"name":"Gradovi",
 		"row":3,
 		"col":0,
-		"validation":{
-			"required":true
-		}
-	}
-	,{
-		"id":"reke",
-		"type":"oneToMany",
-		"name":"Reke",
-		"row":4,
-		"col":0,
+    "typesType":"grad",
 		"validation":{
 			"required":true
 		}
@@ -54,7 +45,7 @@
 	],
 	"button":{
 		"name":"Submit",
-		"url":"http://localhost:8088/grad"
+		"url":"http://localhost:8088/drzava"
 	},
-	"header":"Grad"
+	"header":"Drzava"
 }

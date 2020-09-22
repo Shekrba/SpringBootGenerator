@@ -10,6 +10,7 @@ import {MatTableModule} from '@angular/material/table';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { EntityListComponent } from './entity-list/entity-list.component';
 import { ListTemplateComponent } from './components/list-template/list-template.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ListTemplateComponent } from './components/list-template/list-template.
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatTableModule
+    MatTableModule,
+    NgMultiSelectDropDownModule
   ],
   providers: [],
   bootstrap: [AppComponent]

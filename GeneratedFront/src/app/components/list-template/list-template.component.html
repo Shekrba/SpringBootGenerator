@@ -1,11 +1,11 @@
-<button class="btn btn-primary">Add</button>
+<button class="btn btn-primary" routerLink="/generic/{{entityName}}/post">Add</button>
 <table>
   <th *ngFor="let val of entities[0]|keyvalue">
     {{val.key}}
   </th><th></th><th></th>
   <tr *ngFor="let entity of entities">
     <td *ngFor="let val of entity|keyvalue"><ng-container *ngIf="val.value!=null">{{val.value}}</ng-container><ng-container *ngIf="val.value==null">NULL</ng-container></td>
-    <td><button class="btn btn-success">Edit</button></td>
-    <td><button class="btn btn-danger">Delete</button></td>
+    <td><button class="btn btn-success" routerLink="/generic/{{entityName}}/put/{{entity.id}}">Edit</button></td>
+    <td><button class="btn btn-danger" (click)="delete(entity)">Delete</button></td>
   </tr>
 </table>

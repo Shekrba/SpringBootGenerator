@@ -11,16 +11,28 @@ export class ListTemplateComponent implements OnInit {
 
   entities = [];
   fields = [];
+  entityName = {};
 
   constructor(private activatedRoute: ActivatedRoute,private genericService:GenericService) { }
 
   ngOnInit() {
-    var url = "http://localhost:8088/" + this.activatedRoute.snapshot.paramMap.get('entity');
+    this.entityName = this.activatedRoute.snapshot.paramMap.get('entity');
+
+    var url = "http://localhost:8088/" + this.entityName;
 
     this.genericService.sendActionToBackend(null,url,"get").subscribe(ret => {
       console.log(ret);
       this.fields = Object.keys(ret[0]);
       this.entities = ret;
+    });
+  }
+
+  delete(entity){
+    var url = "http://localhost:8088/" + this.entityName+"/"+entity.id;
+
+    this.genericService.sendActionToBackend(null,url,'delete').subscribe(ret =>{
+      console.log(ret);
+      this.ngOnInit();
     });
   }
 

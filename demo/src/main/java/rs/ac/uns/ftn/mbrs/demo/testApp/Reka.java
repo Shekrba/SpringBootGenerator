@@ -1,7 +1,6 @@
 package rs.ac.uns.ftn.mbrs.demo.testApp;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
 
@@ -27,7 +26,8 @@ public class Reka {
 
     private String naziv;
 
-	@JsonIgnore
+	@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id",scope = Grad.class)
+	@JsonIdentityReference(alwaysAsId=true)
 	@ManyToMany
     	@JoinTable(
             name = "reka_grad",

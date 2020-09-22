@@ -1,7 +1,6 @@
 package rs.ac.uns.ftn.mbrs.demo.testApp;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
 
@@ -34,7 +33,10 @@ public class Grad {
 	@ManyToOne()
 	private Drzava drzava;
 
-	@JsonIgnore
+	@JsonIdentityInfo(
+			generator = ObjectIdGenerators.PropertyGenerator.class,
+			property = "id", scope = Reka.class)
+	@JsonIdentityReference(alwaysAsId=true)
 	@ManyToMany
     	@JoinTable(
             name = "grad_reka",

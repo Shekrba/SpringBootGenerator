@@ -5,6 +5,7 @@ import { ListTemplateComponent } from './components/list-template/list-template.
 
 const routes: Routes = [
   { path: 'generic/:filePath/:method', component: GenericFormComponent },
+  { path: 'generic/:filePath/:method/:id', component: GenericFormComponent },
   { path: 'entities/:entity', component: ListTemplateComponent }
 ];
 

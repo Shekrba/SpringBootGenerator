@@ -14,11 +14,13 @@
 	<#elseif property.class.name?ends_with(".ManyToOne")>
 		"type":"manyToOne",
 		"getOptionsUrl":"http://localhost:8088/${property.type?lower_case}",
-	<#elseif property.class.name?ends_with(".ManyToOne")>
+	<#elseif property.class.name?ends_with(".ManyToMany")>
 		"type":"manyToMany",
 		"getOptionsUrl":"http://localhost:8088/${property.type?lower_case}",
-			<#elseif property.class.name?ends_with(".OneToMany") || property.class.name?ends_with(".ManyToMany")>
+			<#elseif property.class.name?ends_with(".OneToMany")>
 		"type":"oneToMany",
+		"getOptionsUrl":"http://localhost:8088/${property.type?lower_case}",
+		"typesType":"${property.type?lower_case}",
 	</#if>
 		"name":"${property.propertyName?capitalize}",
 		"row":${count},
