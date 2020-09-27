@@ -41,13 +41,11 @@ public class MyPlugin extends com.nomagic.magicdraw.plugins.Plugin {
 		ProjectOptions.getProjectOptions().getGeneratorOptions().put("ApiGenerator", apiOptions);
 		apiOptions.setTemplateDir(pluginDir + File.separator + apiOptions.getTemplateDir()); //apsolutna putanja
 		
-		//to do ftl-s
-		
-		GeneratorOptions listTemplateOptions = new GeneratorOptions("c:/temp", "listTemplate", "templates", "ListTemplate.ts", true, "angular"); 				
+		/*GeneratorOptions listTemplateOptions = new GeneratorOptions("c:/temp", "listTemplate", "templates", "ListTemplate.ts", true, "angular"); 				
 		ProjectOptions.getProjectOptions().getGeneratorOptions().put("ListTemplateGenerator", listTemplateOptions);
 		listTemplateOptions.setTemplateDir(pluginDir + File.separator + listTemplateOptions.getTemplateDir()); //apsolutna putanja
-		
-		GeneratorOptions formOptions = new GeneratorOptions("c:/temp", "form", "templates", "{0}Form.json", true, "angular"); 				
+		*/
+		GeneratorOptions formOptions = new GeneratorOptions("c:/temp", "form", "templates", "{1}.json", true, "angular"); 				
 		ProjectOptions.getProjectOptions().getGeneratorOptions().put("FormGenerator", formOptions);
 		formOptions.setTemplateDir(pluginDir + File.separator + formOptions.getTemplateDir()); //apsolutna putanja
 		

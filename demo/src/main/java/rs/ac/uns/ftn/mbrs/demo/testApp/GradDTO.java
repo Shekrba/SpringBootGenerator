@@ -11,9 +11,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
-public class GradDTO {
-
-    private Long id;
+public class GradDTO {  
 	
     private String naziv;   
 	

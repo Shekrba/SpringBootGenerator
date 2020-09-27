@@ -82,8 +82,17 @@ public abstract class BasicGenerator {
 		String fullPath = outputPath
 				+ File.separator
 				+ (filePackage.isEmpty() ? "" : packageToPath(filePackage)
-						+ File.separator)
-				+ outputFileName.replace("{0}", fileNamePart);
+						+ File.separator);
+		
+		if(outputFileName.contains("{0}")) {
+			fullPath = fullPath + outputFileName.replace("{0}", fileNamePart);
+		}
+		else if (outputFileName.contains("{1}")) {
+			fullPath = fullPath + outputFileName.replace("{1}", fileNamePart.toLowerCase());
+		}
+		else {
+			fullPath = fullPath + outputFileName;
+		}
 
 		File of = new File(fullPath);
 		if (!of.getParentFile().exists()) {

@@ -1,18 +1,7 @@
 package rs.ac.uns.ftn.mbrs.demo.testApp;
 
 import com.fasterxml.jackson.annotation.*;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -22,32 +11,35 @@ import java.util.HashSet;
 import java.util.Set;
 
 
-
 @JsonIgnoreProperties(ignoreUnknown = true, value = {"hibernateLazyInitializer"})
 @NoArgsConstructor
 @Getter
 @Setter
 @Entity
 @Table(name = "drzava")
-public class Drzava {
-
+public class Drzava {  
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	@GeneratedValue(strategy = EnumerationLiteral?)
+	private Long id;   
+	
 	
     private String naziv;   
 	
-    private Integer brojStanovnika;   
+	@Column(name = "broj_stanovnika", unique = false, nullable = false)
+	private Integer brojStanovnika;   
+
+
 	
-    private String glavniGrad;
-
-
-	@JsonIdentityInfo(
-			generator = ObjectIdGenerators.PropertyGenerator.class,
-			property = "id", scope = Reka.class)
-	@JsonIdentityReference(alwaysAsId=true)
+		@JsonIdentityInfo(
+		generator = ObjectIdGenerators.PropertyGenerator.class,
+		property = "id")
+		@JsonIdentityReference(alwaysAsId=true)
 	@OneToMany(mappedBy = "drzava")
 	private Set<Grad> gradovi = new HashSet<Grad>();
+
+	
+    private String glavniGrad;   
 
 
 

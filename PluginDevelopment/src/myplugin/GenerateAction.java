@@ -58,11 +58,11 @@ class GenerateAction extends MDAction{
 			SpringGenerator generatorApi = new SpringGenerator(goApi);
 			generatorApi.generate("api");
 			
-			analyzer.prepareModel();
+			/*analyzer.prepareModel();
 			GeneratorOptions goListTemplate = ProjectOptions.getProjectOptions().getGeneratorOptions().get("ListTemplateGenerator");			
 			SpringGenerator generatorListTemplate = new SpringGenerator(goListTemplate);
 			generatorListTemplate.generate("listTemplate");
-			
+			*/
 			analyzer.prepareModel();
 			GeneratorOptions goForm = ProjectOptions.getProjectOptions().getGeneratorOptions().get("FormGenerator");			
 			SpringGenerator generatorForm = new SpringGenerator(goForm);

@@ -33,15 +33,15 @@ public class ${class.className} {
 	${property.visibility} ${property.type} ${property.propertyName};   
 	
 	<#elseif property.class.name?ends_with(".ColumnProp")>
-	@Column(name = "${property.columnName}", unique = ${property.isUnique}, nullable = ${property.isNullable})
+	@Column(name = "${property.columnName}", unique = ${property.unique?string}, nullable = ${property.nullable?string})
 	${property.visibility} ${property.type} ${property.propertyName};   
 
 
 	<#elseif property.class.name?ends_with(".OneToMany")>
-		@JsonIdentityInfo(
-		generator = ObjectIdGenerators.PropertyGenerator.class,
-		property = "id")
-		@JsonIdentityReference(alwaysAsId=true)
+	@JsonIdentityInfo(
+	generator = ObjectIdGenerators.PropertyGenerator.class,
+	property = "id")
+	@JsonIdentityReference(alwaysAsId=true)
 	@OneToMany(mappedBy = "${property.mappedBy}"<#if property.fetchType??>, fetch = FetchType.${property.fetchType}</#if><#if property.cascadeType??>, cascade = CascadeType.${property.cascadeType}</#if>)
 	${property.visibility} Set<${property.type}> ${property.propertyName} = new HashSet<${property.type}>();
 

@@ -11,9 +11,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
-public class RekaDTO {
-
-    private Long id;
+public class RekaDTO {  
 	
     private String naziv;   
 	

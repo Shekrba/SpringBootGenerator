@@ -2,29 +2,29 @@ package myplugin.generator.fmmodel;
 
 public class ColumnProp extends FMProperty {
 
-	private boolean isNullable;
-	private boolean isUnique;
+	private boolean nullable;
+	private boolean unique;
 	
 	public ColumnProp(String type, String visibility, String propertyName, String columnName, boolean isNullable, boolean isUnique) {
 		super(type, visibility, propertyName, columnName);
 		// TODO Auto-generated constructor stub
-		this.isNullable = isNullable;
-		this.isUnique = isUnique;
+		this.nullable = isNullable;
+		this.unique = isUnique;
 	}
 
 	public boolean isNullable() {
-		return isNullable;
+		return nullable;
 	}
 
 	public void setNullable(boolean isNullable) {
-		this.isNullable = isNullable;
+		this.nullable = isNullable;
 	}
 
 	public boolean isUnique() {
-		return isUnique;
+		return unique;
 	}
 
 	public void setUnique(boolean isUnique) {
-		this.isUnique = isUnique;
+		this.unique = isUnique;
 	}
 }

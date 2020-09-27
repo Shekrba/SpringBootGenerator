@@ -1,7 +1,6 @@
 package rs.ac.uns.ftn.mbrs.demo.testApp;
 
 import com.fasterxml.jackson.annotation.*;
-
 import javax.persistence.*;
 
 import lombok.Getter;
@@ -18,22 +17,22 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "reka")
-public class Reka {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-
-    private String naziv;
-
-	@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id",scope = Grad.class)
-	@JsonIdentityReference(alwaysAsId=true)
+public class Reka {  
+	
+    private String naziv;   
+	
+		@JsonIdentityInfo(
+		generator = ObjectIdGenerators.PropertyGenerator.class,
+		property = "id")
+		@JsonIdentityReference(alwaysAsId=true)
 	@ManyToMany
     	@JoinTable(
-            name = "reka_grad",
-            joinColumns = @JoinColumn(name = "grad_id"),
-            inverseJoinColumns = @JoinColumn(name = "reka_id")
+            name = "grad_reka",
+            joinColumns = @JoinColumn(name = "reka_id"),
+            inverseJoinColumns = @JoinColumn(name = "grad_id")
     	)
-    private Set<Grad> gradovi = new HashSet<>();
+    private Set<Grad> gradovi = new HashSet<>();	
+
+
 
 }

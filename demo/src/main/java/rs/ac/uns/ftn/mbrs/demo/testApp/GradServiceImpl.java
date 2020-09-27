@@ -1,11 +1,14 @@
 package rs.ac.uns.ftn.mbrs.demo.testApp;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import rs.ac.uns.ftn.mbrs.demo.template.GService;
 import rs.ac.uns.ftn.mbrs.demo.utils.ObjectMapperUtils;
 
-import java.util.HashSet;
 import java.util.List;
+import java.util.HashSet;
+
 
 @Service
 public class GradServiceImpl implements GService<Grad, GradDTO> {
@@ -48,16 +51,15 @@ public class GradServiceImpl implements GService<Grad, GradDTO> {
     public Grad update(GradDTO obj) {
     	Grad grad = ObjectMapperUtils.map(obj, Grad.class);
 
+		Grad oldGrad = null;
 		Drzava drzava = drzavaRepo.getOne(obj.getDrzava());
 		grad.setDrzava(drzava);
-		Grad oldGrad = gradRepo.getOne(obj.getId());
+		oldGrad = gradRepo.getOne(obj.getId());
 		oldGrad.getDrzava().getGradovi().remove(oldGrad);
 		drzava.getGradovi().add(grad);
 		grad = gradRepo.save(grad);
 		drzavaRepo.save(drzava);
-		/*for(Reka reka : oldGrad.getReke()){
-			reka.getGradovi().remove(oldGrad);
-		}*/
+			oldGrad = gradRepo.getOne(obj.getId());
 		
 		oldGrad.setReke(new HashSet<>());
 				
