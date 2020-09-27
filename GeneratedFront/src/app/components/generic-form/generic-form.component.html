@@ -54,7 +54,7 @@
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" class="form-control" type="tel" *ngIf="item.type == 'tel'">
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" class="form-control" type="time" *ngIf="item.type == 'time'">
                               <input name="{{i}}" [(ngModel)]="item.model" id="{{item.id}}" class="form-control" type="week" *ngIf="item.type == 'week'">
-                              <table *ngIf="item.type == 'oneToMany' && method == 'put'">
+                              <table *ngIf="item.type == 'oneToMany' && method == 'put'" class="table table-dark">
                                 <th *ngFor="let stagod of oTmData[item.id][0] | keyvalue">{{stagod.key}}</th><th></th><th></th>
                                 <tr *ngFor="let data of oTmData[item.id]">
                                   <td *ngFor="let item of data | keyvalue">{{item.value}}</td>
