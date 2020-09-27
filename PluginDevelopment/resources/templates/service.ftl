@@ -50,6 +50,7 @@ public class ${class.className}ServiceImpl implements GService<${class.className
 			${class.className?lower_case} = ${class.className?lower_case}Repo.save(${class.className?lower_case});
 			${property.type?lower_case}Repo.save(${property.type?lower_case});
 		}
+		${class.className?lower_case} = ${class.className?lower_case}Repo.save(${class.className?lower_case});
 		<#assign flag = true>			
 		</#if>
 	</#list>
@@ -76,7 +77,9 @@ public class ${class.className}ServiceImpl implements GService<${class.className
 		${property.type?lower_case}Repo.save(${property.type?lower_case});
 		<#assign flag = true>
 		<#elseif property.class.name?ends_with(".ManyToMany")>
-			old${class.className} = ${class.className?lower_case}Repo.getOne(obj.getId());
+		<#if flag == false>
+		old${class.className} = ${class.className?lower_case}Repo.getOne(obj.getId());
+		</#if>
 		
 		old${class.className}.set${property.propertyName?cap_first}(new HashSet<>());
 				

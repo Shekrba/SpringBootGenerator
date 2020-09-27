@@ -2,7 +2,7 @@
 	"form":[
     <#assign count = 0>
     <#list properties as property>
-	<#if !property.class.name?ends_with(".IdProp")>
+	<#if property.class.name?ends_with(".IdProp") == false >
 	<#if count!=0>,</#if>{
 		"id":"${property.propertyName}",
 	<#if property.type=="int" || property.type=="Integer" || property.type=="double" || property.type=="Double" || property.type=="Long" || property.type=="long">
@@ -29,9 +29,9 @@
 			"required":true
 		}
 	}
-        </#if>
-        <#assign count = count + 1>
-		</#list>
+	<#assign count = count + 1>
+    </#if>
+	</#list>
 	],
 	"button":{
 		"name":"Submit",

@@ -29,13 +29,12 @@ public class ${class.className} {
 	
 	<#if property.class.name?ends_with(".IdProp")>
 	@Id
-	@GeneratedValue(strategy = ${property.strategy})
+	@GeneratedValue(strategy = GenerationType.${property.strategy})
 	${property.visibility} ${property.type} ${property.propertyName};   
 	
 	<#elseif property.class.name?ends_with(".ColumnProp")>
 	@Column(name = "${property.columnName}", unique = ${property.unique?string}, nullable = ${property.nullable?string})
 	${property.visibility} ${property.type} ${property.propertyName};   
-
 
 	<#elseif property.class.name?ends_with(".OneToMany")>
 	@JsonIdentityInfo(
@@ -50,19 +49,19 @@ public class ${class.className} {
 	${property.visibility} ${property.type} ${property.propertyName};  
 
 	<#elseif property.class.name?ends_with(".ManyToMany")>
-		@JsonIdentityInfo(
-		generator = ObjectIdGenerators.PropertyGenerator.class,
-		property = "id")
-		@JsonIdentityReference(alwaysAsId=true)
+	@JsonIdentityInfo(
+	generator = ObjectIdGenerators.PropertyGenerator.class,
+	property = "id")
+	@JsonIdentityReference(alwaysAsId=true)
 	@ManyToMany
-    	@JoinTable(
-            name = "${property.inverseJoinColumns}_${property.joinColumns}",
-            joinColumns = @JoinColumn(name = "${property.joinColumns}_id"),
-            inverseJoinColumns = @JoinColumn(name = "${property.inverseJoinColumns}_id")
-    	)
-    ${property.visibility} Set<${property.type}> ${property.propertyName} = new HashSet<>();	
+	@JoinTable(
+		name = "${property.inverseJoinColumns}_${property.joinColumns}",
+		joinColumns = @JoinColumn(name = "${property.joinColumns}_id"),
+		inverseJoinColumns = @JoinColumn(name = "${property.inverseJoinColumns}_id")
+	)
+	${property.visibility} Set<${property.type}> ${property.propertyName} = new HashSet<>();	
     <#else>
-    ${property.visibility} ${property.type} ${property.propertyName};   
+	${property.visibility} ${property.type} ${property.propertyName};   
 	</#if>  
 </#list>
 

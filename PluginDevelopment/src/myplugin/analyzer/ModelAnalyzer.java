@@ -209,7 +209,8 @@ public class ModelAnalyzer {
 		    List strategyList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"strategy");
 		    String strategy = "";
 		    if (strategyList!=null && !strategyList.isEmpty()){
-		    	strategy = strategyList.get(0).toString();
+		    	EnumerationLiteral el = (EnumerationLiteral) strategyList.get(0);
+		    	strategy = el.getName();
 			}else {
 				strategy = null;
 			}
@@ -257,7 +258,8 @@ public class ModelAnalyzer {
 	        List fetchTypeList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"fetchType");
 		    String fetchType = "";
 		    if (fetchTypeList!=null && !fetchTypeList.isEmpty()){
-		    	fetchType = fetchTypeList.get(0).toString();
+		    	EnumerationLiteral el = (EnumerationLiteral) fetchTypeList.get(0);
+		    	fetchType = el.getName();
 			}else {
 				fetchType = null;
 			}
@@ -265,7 +267,8 @@ public class ModelAnalyzer {
 	    	List cascadeTypeList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"cascadeType");
 		    String cascadeType = "";
 		    if (cascadeTypeList!=null && !cascadeTypeList.isEmpty()){
-		    	cascadeType = cascadeTypeList.get(0).toString();
+		    	EnumerationLiteral el = (EnumerationLiteral) cascadeTypeList.get(0);
+		    	cascadeType = el.getName();
 			}else {
 				cascadeType = null;
 			}
@@ -292,10 +295,11 @@ public class ModelAnalyzer {
 				columnName = null;
 			}
 		    
-	        List fetchTypeList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"fetchType");
+		    List fetchTypeList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"fetchType");
 		    String fetchType = "";
 		    if (fetchTypeList!=null && !fetchTypeList.isEmpty()){
-		    	fetchType = fetchTypeList.get(0).toString();
+		    	EnumerationLiteral el = (EnumerationLiteral) fetchTypeList.get(0);
+		    	fetchType = el.getName();
 			}else {
 				fetchType = null;
 			}
@@ -303,7 +307,8 @@ public class ModelAnalyzer {
 	    	List cascadeTypeList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"cascadeType");
 		    String cascadeType = "";
 		    if (cascadeTypeList!=null && !cascadeTypeList.isEmpty()){
-		    	cascadeType = cascadeTypeList.get(0).toString();
+		    	EnumerationLiteral el = (EnumerationLiteral) cascadeTypeList.get(0);
+		    	cascadeType = el.getName();
 			}else {
 				cascadeType = null;
 			}
@@ -330,10 +335,11 @@ public class ModelAnalyzer {
 				columnName = null;
 			}
 		    
-	        List fetchTypeList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"fetchType");
+		    List fetchTypeList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"fetchType");
 		    String fetchType = "";
 		    if (fetchTypeList!=null && !fetchTypeList.isEmpty()){
-		    	fetchType = fetchTypeList.get(0).toString();
+		    	EnumerationLiteral el = (EnumerationLiteral) fetchTypeList.get(0);
+		    	fetchType = el.getName();
 			}else {
 				fetchType = null;
 			}
@@ -341,7 +347,8 @@ public class ModelAnalyzer {
 	    	List cascadeTypeList = StereotypesHelper.getStereotypePropertyValue(p,stereotype,"cascadeType");
 		    String cascadeType = "";
 		    if (cascadeTypeList!=null && !cascadeTypeList.isEmpty()){
-		    	cascadeType = cascadeTypeList.get(0).toString();
+		    	EnumerationLiteral el = (EnumerationLiteral) cascadeTypeList.get(0);
+		    	cascadeType = el.getName();
 			}else {
 				cascadeType = null;
 			}
